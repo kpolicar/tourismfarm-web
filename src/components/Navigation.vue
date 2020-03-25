@@ -21,21 +21,9 @@
         <template slot="end">
             <b-navbar-item tag="div">
                 <div class="buttons">
-                    <a class="button is-primary is-rounded">
-                        <strong>Home</strong>
-                    </a>
-                    <a class="button is-light is-rounded">
-                        About
-                    </a>
-                    <a class="button is-light is-rounded">
-                        Amenities
-                    </a>
-                    <a class="button is-light is-rounded">
-                        Rates
-                    </a>
-                    <a class="button is-light is-rounded">
-                        Activities
-                    </a>
+                    <router-link :to="link" v-for="link in links" class="button is-rounded" exact-active-class="is-primary">
+                        {{ link.title }}
+                    </router-link>
                 </div>
             </b-navbar-item>
         </template>
@@ -47,6 +35,17 @@
 
   @Component
   export default class Navigation extends Vue {
+    data() {
+      return {
+        links: [
+          {name: 'home', 'title': 'Home'},
+          {name: 'about', 'title': 'About'},
+          {name: 'about', 'title': 'Ameneties'},
+          {name: 'about', 'title': 'Rates'},
+          {name: 'about', 'title': 'Activities'},
+        ]
+      }
+    }
   }
 </script>
 

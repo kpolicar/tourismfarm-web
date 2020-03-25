@@ -14,11 +14,12 @@
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <h1 class="title">
-                        Join The<br/> Adventure!
+                        Explore The<br/> Countryside!
                     </h1>
                     <h2 class="subtitle">
                         A family farm
                     </h2>
+
                 </div>
             </div>
         </section>
@@ -46,6 +47,7 @@ export default class DefaultLayout extends Vue {}
             font-family: Candal;
         }
         .subtitle {
+            margin-top: 10px;
             color: $accent;
             text-transform: uppercase;
             font-weight: bold;
