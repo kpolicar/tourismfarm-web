@@ -1,6 +1,27 @@
 <template>
     <div>
-        <Navigation></Navigation>
+        <section class="hero is-fullheight video">
+            <div class="hero-video">
+                <video poster="@/assets/hero.jpg" playsinline autoplay muted loop>
+                    <source src="" type="video/mp4"/>
+                </video>
+            </div>
+
+            <div class="hero-head">
+                <Navigation></Navigation>
+            </div>
+
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">
+                        Join The<br/> Adventure!
+                    </h1>
+                    <h2 class="subtitle">
+                        A family farm
+                    </h2>
+                </div>
+            </div>
+        </section>
         <router-view></router-view>
     </div>
 </template>
@@ -16,3 +37,20 @@ import Navigation from '@/components/Navigation.vue';
     })
 export default class DefaultLayout extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+    .hero .hero-body {
+        .title{
+            color: #fff;
+            font-size: 96px;
+            font-family: Candal;
+        }
+        .subtitle {
+            color: $accent;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-style: italic;
+            font-family: "Permanent Marker";
+        }
+    }
+</style>

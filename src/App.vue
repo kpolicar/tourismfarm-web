@@ -17,6 +17,8 @@
 </script>
 
 <style lang="scss">
+  @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Candal&display=swap');
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -24,4 +26,7 @@
     text-align: center;
     color: #2c3e50;
   }
+  // Import Bulma and Buefy styles
+  @import "~bulma";
+  @import "~buefy/src/scss/buefy";
 </style>
