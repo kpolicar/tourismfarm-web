@@ -19,8 +19,9 @@
 <style lang="scss">
   @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Candal&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
   #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'Bree serif', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -28,6 +29,7 @@
   }
   // Import Bulma and Buefy styles
   @import "~bulma";
+  @import "~bulma-divider";
   @import "~buefy/src/scss/buefy";
 
   .title {

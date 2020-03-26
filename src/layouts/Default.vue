@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="default-layout">
         <section class="hero is-fullheight video">
             <div class="hero-video">
                 <video poster="@/assets/hero.jpg" playsinline autoplay muted loop>
@@ -35,11 +35,11 @@ import { Component, Vue } from 'vue-property-decorator';
 import Navigation from '@/components/Navigation.vue';
 import ChooseBooking from '@/components/ChooseBooking.vue';
 
-    @Component({
-      components: {
-        Navigation,
-      },
-    })
+@Component({
+  components: {
+    Navigation,
+  },
+})
 export default class DefaultLayout extends Vue {
       cardModal() {
         this.$buefy.modal.open({
@@ -66,5 +66,13 @@ export default class DefaultLayout extends Vue {
             font-weight: bold;
             font-style: italic;
         }
+    }
+
+    ::v-deep section {
+        margin-top: 50px;
+    }
+
+    section {
+        margin-top: 0;
     }
 </style>

@@ -40,6 +40,9 @@
 <style lang="scss" scoped>
     .logo {
         fill: white;
+        @include mobile {
+            fill: #2d2929;
+        }
     }
     ::v-deep .navbar-item {
         font-family: "Candal";
