@@ -19,7 +19,10 @@
                     <h2 class="subtitle">
                         A family farm
                     </h2>
-
+                    <button class="button is-primary is-medium"
+                            @click="cardModal()">
+                        Book now
+                    </button>
                 </div>
             </div>
         </section>
@@ -30,13 +33,25 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Navigation from '@/components/Navigation.vue';
+import ChooseBooking from '@/components/ChooseBooking.vue';
 
     @Component({
       components: {
         Navigation,
       },
     })
-export default class DefaultLayout extends Vue {}
+export default class DefaultLayout extends Vue {
+      cardModal() {
+        this.$buefy.modal.open({
+          parent: this,
+          component: ChooseBooking,
+          hasModalCard: true,
+          trapFocus: true,
+          fullScreen: true,
+          animation: 'slide'
+        })
+      }
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -44,15 +59,12 @@ export default class DefaultLayout extends Vue {}
         .title{
             color: #fff;
             font-size: 96px;
-            font-family: Candal;
         }
         .subtitle {
             margin-top: 10px;
-            color: $accent;
             text-transform: uppercase;
             font-weight: bold;
             font-style: italic;
-            font-family: "Permanent Marker";
         }
     }
 </style>

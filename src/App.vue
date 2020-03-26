@@ -29,4 +29,12 @@
   // Import Bulma and Buefy styles
   @import "~bulma";
   @import "~buefy/src/scss/buefy";
+
+  .title {
+    font-family: "Candal", sans-serif;
+  }
+  .subtitle {
+    font-family: "Permanent Marker", cursive;
+    color: $accent;
+  }
 </style>
