@@ -21,15 +21,25 @@ $colors: (
         "twitter": ($twitter, $twitter-invert)
 );
 
+// Custom
+$accent: #efc429;
+$secondary: #3e394d;
+$secondary-invert: findColorInvert($secondary);
+
 // Links
 $link: $primary;
 $link-invert: $primary-invert;
 $link-focus-border: $primary;
 
-$accent: #efc429;
-
+// Fonts
 $family-primary: "Bree Serif", $family-sans-serif;
 $family-secondary: "Candal", $family-sans-serif;
 $family-accent: "Permanent Marker", cursive;
 
+// Spacing
 $section-spacing: 2rem;
+
+// Footer
+$footer-background-color: $secondary;
+$footer-color: #999;
+$footer-padding: 2rem 1.5rem;

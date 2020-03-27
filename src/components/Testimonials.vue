@@ -24,6 +24,9 @@
         </blockquote>
       </template>
     </b-carousel-list>
+    <button class="button is-primary is-medium is-rounded">
+      Get in touch
+    </button>
   </section>
 </template>
 
@@ -34,8 +37,8 @@
   export default class Testimonials extends Vue {
     data() {
       return {
-        arrow: true,
-        arrowHover: true,
+        arrow: false,
+        arrowHover: false,
         drag: true,
         gray: false,
         opacity: false,
@@ -76,18 +79,25 @@
   }
 </script>
 
-<style lang="scss">
-  blockquote {
+<style lang="scss" scoped>
+  ::v-deep blockquote {
     color: $grey;
-    cite {
-      font-weight: bold;
-      font-style: normal;
-      font-family: $family-primary;
-      font-size: 18px;
-      color: $black-bis;
-    }
-    .heading {
-      color: $accent;
+  }
+  ::v-deep cite {
+    font-weight: bold;
+    font-style: normal;
+    font-family: $family-primary;
+    font-size: 18px;
+    color: $black-bis;
+  }
+  ::v-deep .heading {
+    color: $accent;
+  }
+  .carousel-list {
+    margin-bottom: $section-spacing;
+    cursor: grab;
+    &:active {
+      cursor: grabbing;
     }
   }
 </style>
