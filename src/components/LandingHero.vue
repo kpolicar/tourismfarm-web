@@ -30,7 +30,7 @@
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
   import QuickNavigation from "@/components/QuickNavigation.vue";
-  import ChooseBooking from "@/components/ChooseBooking.vue";
+  import MakeBooking from "@/components/modals/MakeBooking.vue";
 
   @Component({
     components: {QuickNavigation,},
@@ -39,12 +39,12 @@
     cardModal() {
       this.$buefy.modal.open({
         parent: this,
-        component: ChooseBooking,
+        component: MakeBooking,
         hasModalCard: true,
         trapFocus: true,
         fullScreen: true,
         animation: 'slide'
-      })
+      });
     }
   }
 </script>
