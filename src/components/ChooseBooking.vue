@@ -50,7 +50,7 @@
 <script lang="ts">
   import {Component, Prop, Vue} from 'vue-property-decorator';
 
-  @Component
+  @Component({})
   export default class ChooseBooking extends Vue {
     @Prop() email?: number
     @Prop() password?: string

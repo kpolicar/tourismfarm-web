@@ -16,3 +16,9 @@
   export default class Home extends Vue {
   }
 </script>
+
+<style lang="scss" scoped>
+  ::v-deep section {
+    margin-top: $section-spacing;
+  }
+</style>

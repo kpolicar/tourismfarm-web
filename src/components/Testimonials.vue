@@ -30,7 +30,7 @@
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
 
-  @Component
+  @Component({})
   export default class Testimonials extends Vue {
     data() {
       return {
@@ -77,25 +77,17 @@
 </script>
 
 <style lang="scss">
-  .logo {
-    fill: white;
-  }
-
   blockquote {
-    color: #8c8c8c;
-
+    color: $grey;
     cite {
       font-weight: bold;
       font-style: normal;
-      font-family: "Candal", sans-serif;
+      font-family: $family-primary;
       font-size: 18px;
-      color: #2d2929;
+      color: $black-bis;
     }
-
     .heading {
       color: $accent;
-      font-family: "Permanent Marker", cursive;
-      font-weight: bold;
     }
   }
 </style>

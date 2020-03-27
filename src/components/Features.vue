@@ -1,5 +1,5 @@
 <template>
-  <nav class="level">
+  <nav class="level is-bold">
     <div class="level-item" v-for="feature in features">
       <div>
         <p class="title">
@@ -14,7 +14,7 @@
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
 
-  @Component
+  @Component({})
   export default class Features extends Vue {
     data() {
       return {
@@ -33,6 +33,6 @@
 <style lang="scss" scoped>
   .level-item:hover .heading {
     color: $primary;
-    transition: 0.2s;
+    transition-duration: $speed;
   }
 </style>

@@ -22,8 +22,8 @@
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
 
-  @Component
-  export default class Navigation extends Vue {
+  @Component({})
+  export default class QuickNavigation extends Vue {
     data() {
       return {
         links: [
@@ -40,13 +40,21 @@
 
 <style lang="scss" scoped>
   .logo {
-    fill: white;
+    fill: $white-bis;
     @include mobile {
-      fill: #2d2929;
+      fill: $black-bis;
+    }
+  }
+
+  .button:not(.is-primary) {
+    background: transparent;
+    border: none;
+    &:hover {
+      color: $primary;
     }
   }
 
   ::v-deep .navbar-item {
-    font-family: "Candal";
+    font-family: $family-secondary;
   }
 </style>

@@ -25,13 +25,15 @@
   import {Component, Vue} from 'vue-property-decorator';
   import Features from '@/components/Features';
 
-  @Component({components: {Features}})
+  @Component({
+    components: {Features}
+  })
   export default class WhyUs extends Vue {
   }
 </script>
 
 <style lang="scss" scoped>
   p {
-    margin-bottom: 30px;
+    margin-bottom: $block-spacing;
   }
 </style>
