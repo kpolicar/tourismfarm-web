@@ -5,26 +5,10 @@
         <defs>
           <clipPath id="camping-clip">
             <polygon id="hightlight2" points="0 0, 10 0, 0 5.6">
-              <animate attributeName="points" dur="1s" fill="freeze"
-                       to="0 0, 12 0, 0 6.8" begin="camping.mouseenter "></animate>
-              <animate attributeName="points" dur="1s" fill="freeze"
-                       to="0 0, 10 0, 0 5.6" begin="camping.mouseleave"></animate>
-              <animate attributeName="points" dur="1s" fill="freeze"
-                       to="0 -1.2, 10 -1.2, 0 4.4" begin="apartment.mouseenter "></animate>
-              <animate attributeName="points" dur="1s" fill="freeze"
-                       to="0 0, 10 0, 0 5.6" begin="apartment.mouseleave"></animate>
             </polygon>
           </clipPath>
           <clipPath id="apartment-clip">
             <polygon id="hightlight1" points="10 0, 10 5.6, 0 5.6">
-              <animate xlink:href="#hightlight1" attributeName="points" dur="1s" fill="freeze"
-                       to="10 -1.2, 10 5.6, -2 5.6" begin="apartment.mouseenter "></animate>
-              <animate xlink:href="#hightlight1" attributeName="points" dur="1s" fill="freeze"
-                       to="10 0, 10 5.6, 0 5.6" begin="apartment.mouseleave"></animate>
-              <animate xlink:href="#hightlight1" attributeName="points" dur="1s" fill="freeze"
-                       to="12 0, 12 6.8, 0 6.8" begin="camping.mouseenter "></animate>
-              <animate xlink:href="#hightlight1" attributeName="points" dur="1s" fill="freeze"
-                       to="10 0, 10 5.6, 0 5.6" begin="camping.mouseleave"></animate>
             </polygon>
           </clipPath>
         </defs>
