@@ -1,30 +1,30 @@
 <template>
-    <section>
-        <h2 class="title">What are guests say</h2>
-        <h3 class="subtitle">Testimonials</h3>
-        <b-carousel-list
-                v-model="values"
-                :data="items"
-                :arrow="arrow"
-                :arrow-hover="arrowHover"
-                :items-to-list="perList"
-                :items-to-show="itemsToShow"
-                :repeat="repeat"
-                :autoplay="autoplay"
-                :has-drag="drag"
-                :has-grayscale="gray"
-                :has-opacity="opacity" >
-            <template #item="data">
-                <blockquote>
-                    <p>{{ data.list.content }}</p>
-                    <footer>
-                        <cite>{{ data.list.author }}</cite>
-                        <p class="heading">{{ data.list.date }}</p>
-                    </footer>
-                </blockquote>
-            </template>
-        </b-carousel-list>
-    </section>
+  <section>
+    <h2 class="title">What are guests say</h2>
+    <h3 class="subtitle">Testimonials</h3>
+    <b-carousel-list
+      v-model="values"
+      :data="items"
+      :arrow="arrow"
+      :arrow-hover="arrowHover"
+      :items-to-list="perList"
+      :items-to-show="itemsToShow"
+      :repeat="repeat"
+      :autoplay="autoplay"
+      :has-drag="drag"
+      :has-grayscale="gray"
+      :has-opacity="opacity">
+      <template #item="data">
+        <blockquote>
+          <p>{{ data.list.content }}</p>
+          <footer>
+            <cite>{{ data.list.author }}</cite>
+            <p class="heading">{{ data.list.date }}</p>
+          </footer>
+        </blockquote>
+      </template>
+    </b-carousel-list>
+  </section>
 </template>
 
 <script lang="ts">
@@ -77,22 +77,25 @@
 </script>
 
 <style lang="scss">
-    .logo {
-        fill: white;
+  .logo {
+    fill: white;
+  }
+
+  blockquote {
+    color: #8c8c8c;
+
+    cite {
+      font-weight: bold;
+      font-style: normal;
+      font-family: "Candal", sans-serif;
+      font-size: 18px;
+      color: #2d2929;
     }
-    blockquote {
-        color: #8c8c8c;
-        cite {
-            font-weight: bold;
-            font-style: normal;
-            font-family: "Candal", sans-serif;
-            font-size: 18px;
-            color: #2d2929;
-        }
-        .heading {
-            color: $accent;
-            font-family: "Permanent Marker", cursive;
-            font-weight: bold;
-        }
+
+    .heading {
+      color: $accent;
+      font-family: "Permanent Marker", cursive;
+      font-weight: bold;
     }
+  }
 </style>

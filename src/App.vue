@@ -5,7 +5,8 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
+  import {Component, Vue} from 'vue-property-decorator';
+
   const default_layout = 'default';
 
   @Component
@@ -20,6 +21,7 @@
   @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Candal&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+
   #app {
     font-family: 'Bree serif', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -27,6 +29,7 @@
     text-align: center;
     color: #2c3e50;
   }
+
   // Import Bulma and Buefy styles
   @import "~bulma";
   @import "~bulma-divider";
@@ -35,6 +38,7 @@
   .title {
     font-family: "Candal", sans-serif;
   }
+
   .subtitle {
     font-family: "Permanent Marker", cursive;
     color: $accent;

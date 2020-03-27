@@ -1,21 +1,22 @@
 <template>
-    <b-navbar>
-        <template slot="brand">
-            <b-navbar-item tag="router-link" :to="{ path: '/' }">
-                <img svg-inline src="@/assets/logo.svg" class="logo" width="128px" height="128px"/>
-            </b-navbar-item>
-        </template>
+  <b-navbar>
+    <template slot="brand">
+      <b-navbar-item tag="router-link" :to="{ path: '/' }">
+        <img svg-inline src="@/assets/logo.svg" class="logo" width="128px" height="128px"/>
+      </b-navbar-item>
+    </template>
 
-        <template slot="end">
-            <b-navbar-item tag="div">
-                <div class="buttons">
-                    <router-link :to="link" v-for="link in links" class="button is-rounded" exact-active-class="is-primary">
-                        {{ link.title }}
-                    </router-link>
-                </div>
-            </b-navbar-item>
-        </template>
-    </b-navbar>
+    <template slot="end">
+      <b-navbar-item tag="div">
+        <div class="buttons">
+          <router-link :to="link" v-for="link in links" class="button is-rounded"
+                       exact-active-class="is-primary">
+            {{ link.title }}
+          </router-link>
+        </div>
+      </b-navbar-item>
+    </template>
+  </b-navbar>
 </template>
 
 <script lang="ts">
@@ -38,13 +39,14 @@
 </script>
 
 <style lang="scss" scoped>
-    .logo {
-        fill: white;
-        @include mobile {
-            fill: #2d2929;
-        }
+  .logo {
+    fill: white;
+    @include mobile {
+      fill: #2d2929;
     }
-    ::v-deep .navbar-item {
-        font-family: "Candal";
-    }
+  }
+
+  ::v-deep .navbar-item {
+    font-family: "Candal";
+  }
 </style>

@@ -1,14 +1,14 @@
 <template>
-    <nav class="level">
-        <div class="level-item" v-for="feature in features">
-            <div>
-                <p class="title">
-                    <b-icon :icon="feature.icon" type="is-primary"></b-icon>
-                </p>
-                <p class="heading">{{ feature.title }}</p>
-            </div>
-        </div>
-    </nav>
+  <nav class="level">
+    <div class="level-item" v-for="feature in features">
+      <div>
+        <p class="title">
+          <b-icon :icon="feature.icon" type="is-primary"></b-icon>
+        </p>
+        <p class="heading">{{ feature.title }}</p>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script lang="ts">
@@ -22,8 +22,8 @@
           {title: 'peaceful', icon: 'dove'},
           {title: 'location', icon: 'compass'},
           {title: 'flexible', icon: 'language'},
-          {title: 'assistance', icon: 'handshake'},
-          {title: 'fair', icon: 'money-bill-wave'},
+          {title: 'assistance', icon: 'comment'},
+          {title: 'price', icon: 'money-bill-wave'},
         ],
       };
     }
@@ -31,8 +31,8 @@
 </script>
 
 <style lang="scss" scoped>
-    .level-item:hover .heading {
-        color: $primary;
-        transition: 0.2s;
-    }
+  .level-item:hover .heading {
+    color: $primary;
+    transition: 0.2s;
+  }
 </style>
