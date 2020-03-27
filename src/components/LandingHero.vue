@@ -13,12 +13,12 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title">
-          Explore The<br/> Countryside!
+          Explore The<br/>Countryside!
         </h1>
         <h2 class="subtitle">
           A family farm
         </h2>
-        <button class="button is-primary is-medium"
+        <button class="button is-primary is-medium is-rounded"
                 @click="cardModal()">
           Book now
         </button>
