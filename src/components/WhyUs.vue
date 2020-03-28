@@ -25,7 +25,7 @@
 
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
-  import Features from '@/components/Features';
+  import Features from '@/components/Features.vue';
 
   @Component({
     components: {Features}

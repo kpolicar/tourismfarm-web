@@ -31,9 +31,9 @@
 
 <script lang="ts">
   import {Component, Prop, Vue} from 'vue-property-decorator';
-  import ChooseBooking from "@/components/ChooseBooking.vue";
-  import ReservationDetails from "@/components/forms/ReservationDetails.vue";
-  import GuestDetails from "@/components/forms/GuestDetails.vue";
+  import ChooseBooking from '@/components/ChooseBooking.vue';
+  import ReservationDetails from '@/components/forms/ReservationDetails.vue';
+  import GuestDetails from '@/components/forms/GuestDetails.vue';
 
   @Component({
     components: {ChooseBooking}

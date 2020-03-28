@@ -29,8 +29,8 @@
 
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
-  import QuickNavigation from "@/components/QuickNavigation.vue";
-  import MakeBooking from "@/components/modals/MakeBooking.vue";
+  import QuickNavigation from '@/components/QuickNavigation.vue';
+  import MakeBooking from '@/components/modals/MakeBooking.vue';
 
   @Component({
     components: {QuickNavigation,},
