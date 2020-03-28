@@ -38,18 +38,19 @@
 
   @Component({})
   export default class GuestsPicker extends Vue {
-    @Prop({
-      default: {
-        adults: 1, children: 0, infants: 0,
-      }
-    }) value: Object
+    @Prop()
+    value = {
+      adults: 1, children: 0, infants: 0,
+    }
 
-    data() {
-      return {
-        adults: this.value.adults,
-        children: this.value.children,
-        infants: this.value.infants,
-      }
+    adults!: number
+    children!: number
+    infants!: number
+
+    mounted () {
+      this.adults = this.value.adults
+      this.children = this.value.children
+      this.infants = this.value.infants
     }
 
     get title() {

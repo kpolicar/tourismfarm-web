@@ -30,22 +30,20 @@
     components: {GuestsPicker}
   })
   export default class ReservationDates extends Vue {
-    data() {
-      return {
-        dates: [],
-        guests: {
-          adults: 1,
-          children: 0,
-          infants: 0
-        }
-      }
+    dates: Array<Date> = []
+    guests = {
+      adults: 1,
+      children: 0,
+      infants: 0
     }
+
     finish() {
       console.log(this.guests);
       this.$emit('finished', this.dates)
     }
+
     get passes() {
-      return this.dates.length > 0 && this.adults > 0;
+      return this.dates.length > 0 && this.guests.adults > 0;
     }
   }
 </script>

@@ -39,30 +39,32 @@
     components: {ChooseBooking}
   })
   export default class MakeBooking extends Vue {
-    @Prop({default: 0}) step: number
-    data() {
-      return {
-        progress: this.step,
-        steps: [
-          {
-            component: ChooseBooking,
-            title: 'Choose booking'
-          },
-          {
-            component: ReservationDetails,
-            title: 'Reservation details',
-            description: 'Select the dates you would like to stay with us\nYou can always extend your stay once you arrive'
-          },
-          {
-            component: GuestDetails,
-            title: 'Reservation details',
-            description: 'Select the dates you would like to stay with us\nYou can always extend your stay once you arrive'
-          },
-        ]
-      }
+    @Prop()
+    step: number = 0
+
+    progress!: number
+    steps = [
+      {
+        component: ChooseBooking,
+        title: 'Choose booking'
+      },
+      {
+        component: ReservationDetails,
+        title: 'Reservation details',
+        description: 'Select the dates you would like to stay with us\nYou can always extend your stay once you arrive'
+      },
+      {
+        component: GuestDetails,
+        title: 'Reservation details',
+        description: 'Select the dates you would like to stay with us\nYou can always extend your stay once you arrive'
+      },
+    ]
+
+    mounted () {
+      this.progress = this.step
     }
 
-    stepFinished(data) {
+    stepFinished() {
       this.progress++;
       console.log('progress: '+this.progress);
     }

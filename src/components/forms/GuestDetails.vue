@@ -21,7 +21,6 @@
       outlined
       icon-pack="fas"
       icon-right="forward"
-      :disabled="dates.length === 0"
       @click="finish()">
       Next
     </b-button>
@@ -36,13 +35,8 @@
     components: {GuestsPicker}
   })
   export default class ReservationDates extends Vue {
-    data() {
-      return {
-        dates: []
-      }
-    }
     finish() {
-      this.$emit('finished', this.dates)
+      this.$emit('finished')
     }
   }
 </script>

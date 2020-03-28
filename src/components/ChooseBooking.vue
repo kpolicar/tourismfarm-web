@@ -34,7 +34,7 @@
 
   @Component({})
   export default class ChooseBooking extends Vue {
-    choose(value) {
+    choose(value: string) {
       this.$emit('finished', value)
     }
   }
