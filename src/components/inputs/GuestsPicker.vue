@@ -1,10 +1,8 @@
 <template>
   <b-dropdown position="is-bottom-left" aria-role="menu" trap-focus>
-    <b-field label="Guests" label-position="on-border" slot="trigger">
-      <b-button icon-right="caret-down">
-        <span>{{ title }}</span>
-      </b-button>
-    </b-field>
+    <b-button icon-right="caret-down"  slot="trigger">
+      <span>{{ title }}</span>
+    </b-button>
 
     <b-dropdown-item
       aria-role="menu-item"

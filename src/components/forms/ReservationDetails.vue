@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-field label="Add dates to reservation">
+    <b-field label="Add dates to reservation" horizontal custom-class="is-normal">
       <b-datepicker
         placeholder="Check in - check out"
         v-model="dates"
@@ -8,7 +8,9 @@
         range>
       </b-datepicker>
     </b-field>
+    <b-field label="Guests" horizontal custom-class="is-normal">
     <GuestsPicker v-model="guests"></GuestsPicker>
+    </b-field>
     <b-button
       outlined
       icon-pack="fas"

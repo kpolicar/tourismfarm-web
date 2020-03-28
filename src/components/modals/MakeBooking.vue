@@ -5,28 +5,11 @@
         v-model="progress"
         animated
         has-navigation
-        :customNavigation="true"
-        v-if="progress > 0">
-        <b-step-item label="Account">
-          <h1 class="title has-text-centered">Account</h1>
-          Lorem ipsum dolor sit amet.
-        </b-step-item>
-
-        <b-step-item label="Reservation">
-          <h1 class="title has-text-centered">Reservation details</h1>
-          Select the dates you would like to stay with us<br/>
-          You can always extend your stay once you arrive
-        </b-step-item>
-
-        <b-step-item label="Details">
-          <h1 class="title has-text-centered">Basic info</h1>
-          Tell us a little about yourself<br/>
-          How many people plan on staying? Do you have any additional requests?
-        </b-step-item>
-
-        <b-step-item label="Finish" disabled>
-          <h1 class="title has-text-centered">Finish</h1>
-          Lorem ipsum dolor sit amet.
+        :customNavigation="true">
+        <b-step-item :label="step.title" v-for="step in this.steps">
+          <h1 class="title has-text-centered" v-if="step.title">{{ step.title }}</h1>
+          {{ step.description }}
+          <component :is="step.component" @finished="stepFinished"></component>
         </b-step-item>
 
         <template
@@ -42,9 +25,6 @@
           </b-button>
         </template>
       </b-steps>
-      <keep-alive>
-        <component :is="this.steps[this.progress]" @finished="stepFinished"></component>
-      </keep-alive>
     </section>
   </div>
 </template>
@@ -55,16 +35,29 @@
   import ReservationDetails from "@/components/forms/ReservationDetails.vue";
   import GuestDetails from "@/components/forms/GuestDetails.vue";
 
-  @Component({})
+  @Component({
+    components: {ChooseBooking}
+  })
   export default class MakeBooking extends Vue {
     @Prop({default: 0}) step: number
     data() {
       return {
         progress: this.step,
         steps: [
-          ChooseBooking,
-          ReservationDetails,
-          GuestDetails,
+          {
+            component: ChooseBooking,
+            title: 'Choose booking'
+          },
+          {
+            component: ReservationDetails,
+            title: 'Reservation details',
+            description: 'Select the dates you would like to stay with us\nYou can always extend your stay once you arrive'
+          },
+          {
+            component: GuestDetails,
+            title: 'Reservation details',
+            description: 'Select the dates you would like to stay with us\nYou can always extend your stay once you arrive'
+          },
         ]
       }
     }
