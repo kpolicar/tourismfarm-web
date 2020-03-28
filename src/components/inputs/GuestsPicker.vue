@@ -19,11 +19,11 @@
             </b-field>
 
             <b-field label="Children" horizontal custom-class="is-normal">
-              <b-numberinput v-model="computedChildren"></b-numberinput>
+              <b-numberinput v-model="computedChildren" min="0"></b-numberinput>
             </b-field>
 
             <b-field label="Infants" horizontal custom-class="is-normal">
-              <b-numberinput v-model="computedInfants"></b-numberinput>
+              <b-numberinput v-model="computedInfants" min="0"></b-numberinput>
             </b-field>
           </section>
           <footer class="modal-card-foot">

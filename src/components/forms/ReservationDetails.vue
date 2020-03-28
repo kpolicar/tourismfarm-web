@@ -8,7 +8,6 @@
         range>
       </b-datepicker>
     </b-field>
-    <p>{{ guests.adults }} {{ guests.children }} {{ guests.infants }}</p>
     <GuestsPicker v-model="guests"></GuestsPicker>
     <b-button
       outlined
