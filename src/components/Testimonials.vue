@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="title">What are guests say</h2>
+    <h2 class="title">What our guests say</h2>
     <h3 class="subtitle">Testimonials</h3>
     <b-carousel-list
       v-model="values"

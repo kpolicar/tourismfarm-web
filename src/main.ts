@@ -6,10 +6,12 @@ import Buefy from 'buefy'
 import '@fortawesome/fontawesome-free/css/all.css'
 
 import DefaultLayout from './layouts/Default.vue';
+import LandingLayout from './layouts/Landing.vue';
 
 Vue.config.productionTip = false;
 
 Vue.component('layout-default', DefaultLayout);
+Vue.component('layout-landing', LandingLayout);
 
 Vue.use(Buefy, {
   defaultIconPack: 'fas',

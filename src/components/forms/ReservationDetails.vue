@@ -29,7 +29,7 @@
   @Component({
     components: {GuestsPicker}
   })
-  export default class ReservationDates extends Vue {
+  export default class ReservationDetailsForm extends Vue {
     dates: Array<Date> = []
     guests = {
       adults: 1,

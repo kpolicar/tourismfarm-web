@@ -34,7 +34,7 @@
   @Component({
     components: {GuestsPicker}
   })
-  export default class ReservationDates extends Vue {
+  export default class GuestDetailsForm extends Vue {
     finish() {
       this.$emit('finished')
     }

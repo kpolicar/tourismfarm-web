@@ -30,7 +30,7 @@
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
   import QuickNavigation from '@/components/QuickNavigation.vue';
-  import MakeBooking from '@/components/modals/MakeBooking.vue';
+  import ChooseBookingModal from '@/components/modals/ChooseBooking.vue';
 
   @Component({
     components: {QuickNavigation,},
@@ -39,7 +39,7 @@
     cardModal() {
       this.$buefy.modal.open({
         parent: this,
-        component: MakeBooking,
+        component: ChooseBookingModal,
         hasModalCard: true,
         trapFocus: true,
         fullScreen: true,
@@ -50,6 +50,9 @@
 </script>
 
 <style lang="scss" scoped>
+  ::v-deep .logo {
+    fill: $white-bis;
+  }
   .hero {
     background: center center url('~@/assets/hero.jpg');
     background-size: cover;

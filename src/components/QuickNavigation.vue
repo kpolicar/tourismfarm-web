@@ -39,13 +39,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .logo {
-    fill: $white-bis;
-    @include mobile {
-      fill: $black-bis;
-    }
-  }
-
   .button:not(.is-primary) {
     background: transparent;
     border: none;

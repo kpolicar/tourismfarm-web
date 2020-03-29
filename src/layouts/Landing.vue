@@ -1,6 +1,6 @@
 <template>
   <div id="default-layout">
-    <QuickNavigation></QuickNavigation>
+    <LandingHero></LandingHero>
     <router-view></router-view>
     <Footer></Footer>
   </div>
@@ -10,11 +10,10 @@
   import {Component, Vue} from 'vue-property-decorator';
   import LandingHero from "@/components/LandingHero.vue";
   import Footer from "@/components/Footer.vue";
-  import QuickNavigation from "@/components/QuickNavigation.vue";
 
   @Component({
-    components: {QuickNavigation, Footer, LandingHero},
+    components: {Footer, LandingHero},
   })
-  export default class DefaultLayout extends Vue {
+  export default class LandingLayout extends Vue {
   }
 </script>
