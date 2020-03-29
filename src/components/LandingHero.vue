@@ -1,9 +1,9 @@
 <template>
   <section class="hero is-fullheight video">
-    <div class="hero-video">
-      <video poster="@/assets/hero.jpg" playsinline autoplay muted loop>
-        <source src="" type="video/mp4"/>
-      </video>
+    <div class="hero-image">
+      <figure class="image">
+        <img src="@/assets/hero.jpg" alt="" >
+      </figure>
     </div>
 
     <div class="hero-head">
