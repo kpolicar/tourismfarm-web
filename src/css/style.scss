@@ -22,14 +22,3 @@ body {
   font-family: $family-accent;
   color: $accent;
 }
-
-.hero-image {
-  @extend .is-overlay, .is-clipped;
-  .image {
-    height: 100%;
-    img {
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}

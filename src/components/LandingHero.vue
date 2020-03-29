@@ -1,9 +1,9 @@
 <template>
   <section class="hero is-fullheight video">
-    <div class="hero-image">
-      <figure class="image">
-        <img src="@/assets/hero.jpg" alt="" >
-      </figure>
+    <div class="hero-video">
+      <video playsinline autoplay muted loop>
+        <source src="" type="video/mp4"/>
+      </video>
     </div>
 
     <div class="hero-head">
@@ -51,6 +51,9 @@
 
 <style lang="scss" scoped>
   .hero {
+    background: center center url('~@/assets/hero.jpg');
+    background-size: cover;
+
     .hero-body {
       .title {
         color: $text-invert;
