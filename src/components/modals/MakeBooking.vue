@@ -6,10 +6,10 @@
         animated
         has-navigation
         :customNavigation="true">
-        <b-step-item :label="step.title" v-for="step in this.steps">
-          <h1 class="title has-text-centered" v-if="step.title">{{ step.title }}</h1>
-          {{ step.description }}
-          <component :is="step.component" @finished="stepFinished"></component>
+        <b-step-item :label="newStep.title" v-for="newStep in steps">
+          <h1 class="title has-text-centered" v-if="newStep.title">{{ newStep.title }}</h1>
+          {{ newStep.description }}
+          <component :is="newStep.component" @finished="stepFinished"></component>
         </b-step-item>
 
         <template
@@ -39,10 +39,10 @@
     components: {ChooseBooking}
   })
   export default class MakeBooking extends Vue {
-    @Prop()
-    step: number = 0
+    @Prop({default: 0})
+    step!: number
 
-    progress!: number
+    progress = 0
     steps = [
       {
         component: ChooseBooking,
@@ -60,7 +60,7 @@
       },
     ]
 
-    mounted () {
+    created () {
       this.progress = this.step
     }
 
