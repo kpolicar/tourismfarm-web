@@ -1,31 +1,53 @@
 <template>
   <div>
-    <b-field label="Add dates to reservation" custom-class="is-normal">
-      <b-datepicker
-        placeholder="Check in - check out"
-        v-model="dates"
-        :min-date="new Date()"
-        range>
-      </b-datepicker>
-    </b-field>
-    <b-field label="Guests" custom-class="is-normal">
-      <GuestsPicker v-model="guests"></GuestsPicker>
-    </b-field>
 
-    <nav class="level">
-      <div class="level-item level-left">
-        <div>
-          <p>€25 x {{ duration }} nights</p>
-        </div>
-      </div>
-      <div class="level-item level-right">
-        <div>
-          <p class="heading">€{{ sum }}</p>
-        </div>
-      </div>
-    </nav>
 
-    <b-table :data="data" :columns="columns"></b-table>
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          70€<small>per night</small>
+        </p>
+      </header>
+      <div class="card-content">
+
+        <b-field label="Add dates to reservation" custom-class="is-normal">
+          <b-datepicker
+            placeholder="Check in - check out"
+            v-model="dates"
+            :min-date="new Date()"
+            range>
+          </b-datepicker>
+        </b-field>
+        <b-field label="Guests" custom-class="is-normal">
+          <GuestsPicker v-model="guests"></GuestsPicker>
+        </b-field>
+
+        <table class="table is-fullwidth">
+          <tbody>
+          <tr>
+            <td>€70 x 2 nights</td>
+            <td>€140</td>
+          </tr>
+          <tr>
+            <td>Service fee</td>
+            <td>€24</td>
+          </tr>
+          <tr>
+            <td>Occupancy taxes and fees</td>
+            <td>€20</td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <th>Total</th>
+            <th>€184</th>
+          </tr>
+          </tfoot>
+        </table>
+
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -58,7 +80,12 @@
     @Watch('guests')
     @Watch('duration')
     priceChanged() {
-      this.$http.get('http://localhost:8000/api/price/camping', {params: {modifier: this.guests.adults, duration: this.duration}})
+      this.$http.get('http://localhost:8000/api/price/camping', {
+        params: {
+          modifier: this.guests.adults,
+          duration: this.duration
+        }
+      })
         .then(response => {
           this.sum = response.data
         })
@@ -73,3 +100,11 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  .table {
+    td:last-child, th:last-child {
+      text-align: right;
+    }
+  }
+</style>
