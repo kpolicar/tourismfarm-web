@@ -9,7 +9,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import DefaultLayout from './layouts/Default.vue';
 import LandingLayout from './layouts/Landing.vue';
 
-Axios.defaults.baseURL = 'http://localhost:8000/api';
+Axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 
 Vue.prototype.$http = Axios;
 Vue.config.productionTip = false;
