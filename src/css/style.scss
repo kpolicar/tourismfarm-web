@@ -22,3 +22,14 @@ body {
   font-family: $family-accent;
   color: $accent;
 }
+
+.dropdown.is-expanded {
+  .dropdown-trigger button {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.modal-card.is-fullwidth {
+  width: 100%;
+}

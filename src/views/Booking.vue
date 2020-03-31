@@ -8,7 +8,9 @@
       <b-step-item :label="step.title" v-for="(step, index) in steps" :clickable="step.complete" :type="{'is-success': step.complete}">
         <h1 class="title has-text-centered" v-if="step.title">{{ step.title }}</h1>
         {{ step.description }}
-        <component :is="step.component" @passes="stepChanged(index, $event)"></component>
+        <div style="max-width: 350px; margin: 0 auto;">
+          <component :is="step.component" @passes="stepChanged(index, $event)"></component>
+        </div>
       </b-step-item>
 
       <template

@@ -1,5 +1,5 @@
 <template>
-  <b-dropdown position="is-bottom-left" aria-role="menu" trap-focus>
+  <b-dropdown position="is-bottom-left" aria-role="menu" trap-focus expanded>
     <b-button icon-right="caret-down"  slot="trigger">
       <span>{{ title }}</span>
     </b-button>
@@ -10,7 +10,7 @@
       custom
       paddingless>
       <form action="">
-        <div class="modal-card">
+        <div class="modal-card is-fullwidth">
           <section class="modal-card-body">
             <b-field label="Adults" horizontal custom-class="is-normal">
               <b-numberinput v-model="computedAdults" min="1"></b-numberinput>
