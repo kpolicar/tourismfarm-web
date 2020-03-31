@@ -73,7 +73,9 @@
     }
 
     get duration() {
-      return Math.abs((this.dates[0] - this.dates[1]) / (1000 * 60 * 60 * 24)) + 1;
+      let dateDiff =  Math.abs(this.dates[0].getTime() - this.dates[1].getTime())
+
+      return dateDiff / (1000 * 60 * 60 * 24) + 1;
     }
 
     get modifier() {

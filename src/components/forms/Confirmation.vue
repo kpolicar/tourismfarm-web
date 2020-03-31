@@ -19,14 +19,6 @@
 
     sendReservationToApi() {
       this.loading=true;
-      this.$http.get('http://localhost:8000/api/reservations')
-        .then(response => {
-          console.log(response)
-        })
-        .catch(error => {
-          console.log(error)
-        })
-        .finally(() => this.loading = false)
     }
   }
 </script>

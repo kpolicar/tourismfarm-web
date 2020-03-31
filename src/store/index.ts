@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import api from '@/services/api/Price'
+import api from '@/services/api/Price.ts'
 
 Vue.use(Vuex);
 
