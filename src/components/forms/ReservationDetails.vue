@@ -10,7 +10,7 @@
       <div class="card">
         <header class="card-header">
           <p class="card-header-title">
-            70€<small>per night</small>
+            {{ pricing.base }}€<small>per night</small>
           </p>
         </header>
         <div class="card-content">
@@ -27,25 +27,21 @@
             <GuestsPicker v-model="guests"></GuestsPicker>
           </b-field>
 
-          <table class="table is-fullwidth">
+          <table class="table is-fullwidth" v-if="passes">
             <tbody>
             <tr>
-              <td>€70 x 2 nights</td>
-              <td>€140</td>
+              <td>€{{ pricing.base }} x {{ duration }} nights</td>
+              <td>€{{ price }}</td>
             </tr>
             <tr>
-              <td>Service fee</td>
-              <td>€24</td>
-            </tr>
-            <tr>
-              <td>Occupancy taxes and fees</td>
-              <td>€20</td>
+              <td>Tourist tax</td>
+              <td>€{{ tax }}</td>
             </tr>
             </tbody>
             <tfoot>
             <tr>
               <th>Total</th>
-              <th>€184</th>
+              <th>€{{ total }}</th>
             </tr>
             </tfoot>
           </table>
@@ -72,8 +68,6 @@
       infants: 0
     }
 
-    sum = 0
-
     get passes() {
       return this.dates.length > 0 && this.guests.adults > 0;
     }
@@ -82,21 +76,24 @@
       return Math.abs((this.dates[0] - this.dates[1]) / (1000 * 60 * 60 * 24)) + 1;
     }
 
-    @Watch('guests')
-    @Watch('duration')
-    priceChanged() {
-      this.$http.get('http://localhost:8000/api/price/camping', {
-        params: {
-          modifier: this.guests.adults,
-          duration: this.duration
-        }
-      })
-        .then(response => {
-          this.sum = response.data
-        })
-        .catch(error => {
-          console.log(error)
-        })
+    get modifier() {
+      return  this.duration * (this.guests.adults + this.guests.children)
+    }
+
+    get price() {
+      return this.pricing.base * this.modifier
+    }
+
+    get tax() {
+      return this.pricing.tax * this.modifier
+    }
+
+    get total() {
+      return this.price + this.tax
+    }
+
+    get pricing() {
+      return this.$store.state.pricing.camp;
     }
 
     @Watch('passes')

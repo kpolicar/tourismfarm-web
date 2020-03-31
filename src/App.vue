@@ -11,6 +11,9 @@
 
   @Component({})
   export default class App extends Vue {
+    mounted() {
+      this.$store.dispatch('updatePricing');
+    }
     get layout(): string {
       return 'layout-' + (this.$route.meta.layout || default_layout);
     }
