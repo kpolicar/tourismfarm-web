@@ -1,50 +1,55 @@
 <template>
-  <div>
+  <div class="columns">
+
+    <div class="column is-two-thirds">
+      hey
+    </div>
 
 
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">
-          70€<small>per night</small>
-        </p>
-      </header>
-      <div class="card-content">
+    <div class="column">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            70€<small>per night</small>
+          </p>
+        </header>
+        <div class="card-content">
 
-        <b-field label="Add dates to reservation" custom-class="is-normal">
-          <b-datepicker
-            placeholder="Check in - check out"
-            v-model="dates"
-            :min-date="new Date()"
-            range>
-          </b-datepicker>
-        </b-field>
-        <b-field label="Guests" custom-class="is-normal">
-          <GuestsPicker v-model="guests"></GuestsPicker>
-        </b-field>
+          <b-field label="Add dates to reservation" custom-class="is-normal">
+            <b-datepicker
+              placeholder="Check in - check out"
+              v-model="dates"
+              :min-date="new Date()"
+              range>
+            </b-datepicker>
+          </b-field>
+          <b-field label="Guests" custom-class="is-normal">
+            <GuestsPicker v-model="guests"></GuestsPicker>
+          </b-field>
 
-        <table class="table is-fullwidth">
-          <tbody>
-          <tr>
-            <td>€70 x 2 nights</td>
-            <td>€140</td>
-          </tr>
-          <tr>
-            <td>Service fee</td>
-            <td>€24</td>
-          </tr>
-          <tr>
-            <td>Occupancy taxes and fees</td>
-            <td>€20</td>
-          </tr>
-          </tbody>
-          <tfoot>
-          <tr>
-            <th>Total</th>
-            <th>€184</th>
-          </tr>
-          </tfoot>
-        </table>
-
+          <table class="table is-fullwidth">
+            <tbody>
+            <tr>
+              <td>€70 x 2 nights</td>
+              <td>€140</td>
+            </tr>
+            <tr>
+              <td>Service fee</td>
+              <td>€24</td>
+            </tr>
+            <tr>
+              <td>Occupancy taxes and fees</td>
+              <td>€20</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>Total</th>
+              <th>€184</th>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
       </div>
     </div>
 

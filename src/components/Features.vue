@@ -1,6 +1,6 @@
 <template>
   <nav class="level is-bold">
-    <div class="level-item" v-for="feature in features">
+    <div class="level-item has-text-centered" v-for="feature in features">
       <div>
         <p class="title">
           <b-icon :icon="feature.icon" type="is-primary"></b-icon>

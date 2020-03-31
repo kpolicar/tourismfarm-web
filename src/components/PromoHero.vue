@@ -1,7 +1,7 @@
 <template>
   <section class="hero is-large">
     <div class="hero-body">
-      <div class="container">
+      <div class="container has-text-centered">
         <h2 class="subtitle">
           Explore romantic campsites
         </h2>
