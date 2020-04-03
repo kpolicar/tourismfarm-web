@@ -12,8 +12,7 @@
         </div>
       </b-step-item>
 
-      <template
-        v-slot:navigation="{previous, next}">
+      <template v-slot:navigation="{previous, next}">
         <div class="has-text-centered">
           <b-button
             outlined
@@ -44,6 +43,7 @@
   import ReservationDetails from "@/components/forms/ReservationDetails.vue";
   import GuestDetails from "@/components/forms/GuestDetails.vue";
   import Confirmation from "@/components/forms/Confirmation.vue";
+  import Amenities from "@/components/Amenities.vue";
 
   @Component({})
   export default class Inquiry extends Vue {

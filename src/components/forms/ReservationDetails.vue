@@ -1,11 +1,9 @@
 <template>
   <div class="columns">
-
     <div class="column is-two-thirds">
-      hey
+      <b-button class="is-small">Change</b-button>
+      <CampingInquiryContent></CampingInquiryContent>
     </div>
-
-
     <div class="column">
       <div class="card">
         <header class="card-header">
@@ -48,16 +46,16 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script lang="ts">
   import {Component, Vue, Watch} from 'vue-property-decorator';
   import GuestsPicker from "@/components/inputs/GuestsPicker.vue";
+  import CampingInquiryContent from "@/components/content/CampingInquiry.vue";
 
   @Component({
-    components: {GuestsPicker}
+    components: {GuestsPicker, CampingInquiryContent}
   })
   export default class ReservationDetailsForm extends Vue {
 
@@ -73,13 +71,13 @@
     }
 
     get duration() {
-      let dateDiff =  Math.abs(this.dates[0].getTime() - this.dates[1].getTime())
+      let dateDiff = Math.abs(this.dates[0].getTime() - this.dates[1].getTime())
 
       return dateDiff / (1000 * 60 * 60 * 24) + 1;
     }
 
     get modifier() {
-      return  this.duration * (this.guests.adults + this.guests.children)
+      return this.duration * (this.guests.adults + this.guests.children)
     }
 
     get price() {
