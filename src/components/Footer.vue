@@ -1,14 +1,16 @@
 <template>
   <section>
-    <footer class="footer is-secondary">
-      <div class="content has-text-centered">
-        <ul>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Legal</a></li>
-          <li><a href="#">Terms & Privacy</a></li>
-        </ul>
-      </div>
-    </footer>
+    <nav class="navbar is-transparent" role="navigation">
+        <a class="navbar-item has-text-centered" href="#">
+          Contact
+        </a>
+        <a class="navbar-item has-text-centered" href="#">
+          Legal
+        </a>
+        <a class="navbar-item has-text-centered" href="#">
+          Terms & Privacy
+        </a>
+    </nav>
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
@@ -28,7 +30,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .footer.is-secondary {
-      background: transparent;
+  .navbar {
+    justify-content: center;
   }
 </style>
