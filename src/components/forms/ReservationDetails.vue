@@ -55,6 +55,10 @@
   import CampingInquiryContent from "@/components/content/CampingInquiry.vue";
   import GrandApartmentInquiryContent from "@/components/content/GrandApartmentInquiry.vue";
 
+  interface AccommodationConfig {
+    content: typeof Vue
+  }
+
   @Component({
     components: {GuestsPicker, CampingInquiryContent}
   })
@@ -66,10 +70,10 @@
       children: 0,
       infants: 0
     }
-    accommodation
-    active
+    accommodation!: string
+    active!: AccommodationConfig
 
-    configs = {
+    configs : { [key: string]: AccommodationConfig } = {
       'camping': {
         content: CampingInquiryContent
       },
