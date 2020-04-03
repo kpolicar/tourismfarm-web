@@ -46,12 +46,12 @@
   import Confirmation from "@/components/forms/Confirmation.vue";
 
   @Component({})
-  export default class Booking extends Vue {
+  export default class Inquiry extends Vue {
     progress = 0
     steps = [
       {
         component: ReservationDetails,
-        title: 'Reservation details',
+        title: 'Inquiry details',
         complete: false
       },
       {

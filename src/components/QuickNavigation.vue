@@ -28,9 +28,9 @@
       return {
         links: [
           {name: 'home', 'title': 'Home'},
-          {name: 'about', 'title': 'About'},
-          {name: 'about', 'title': 'Ameneties'},
-          {name: 'about', 'title': 'Rates'},
+          {name: 'about', 'title': 'Camping'},
+          {name: 'about', 'title': 'Apartments'},
+          {name: 'about', 'title': 'Dormitories'},
           {name: 'about', 'title': 'Activities'},
         ]
       }

@@ -20,7 +20,7 @@
                clip-path="url(#apartment-clip)">
         </image>
 
-        <router-link :to="{name: 'booking', query: {target: 'camping'}}">
+        <router-link :to="{name: 'inquiry', query: {target: 'camping'}}">
           <image id="camping"
                  preserveAspectRatio="xMidYMax slice"
                  xlink:href="https://wallpaperset.com/w/full/8/1/2/216250.jpg"

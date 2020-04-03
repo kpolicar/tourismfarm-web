@@ -12,9 +12,9 @@ const routes = [
     meta: {layout: 'landing'}
   },
   {
-    path: '/booking',
-    name: 'booking',
-    component: () => import('../views/Booking.vue'),
+    path: '/inquiry',
+    name: 'inquiry',
+    component: () => import('../views/Inquiry.vue'),
   },
 ];
 

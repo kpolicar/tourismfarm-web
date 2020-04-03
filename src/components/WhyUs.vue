@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container">
-      <div class="columns">
+      <div class="columns is-vcentered">
         <div class="column">
           <h2 class="title">Why us?</h2>
           <h3 class="subtitle">What do we offer that others don't?</h3>
