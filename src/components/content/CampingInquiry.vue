@@ -2,18 +2,6 @@
   <div>
     <h2 class="title">Small Rural Campsite (Bring Your Tent/Caravan)</h2>
     <p class="subtitle">Brezje, Slovenia</p>
-
-    <b-carousel-list
-      v-model="values"
-      :data="items"
-      :arrow="arrow"
-      :arrow-hover="arrowHover"
-      :items-to-list="perList"
-      :repeat="repeat"
-      :has-drag="drag"
-      :has-grayscale="gray"
-      :has-opacity="opacity" />
-
     <ul>
       <li class="is-inline">8 guests</li>
       <li class="is-inline">1 bed</li>
@@ -45,35 +33,5 @@
     components: {Amenities}
   })
   export default class CampingInquiryContent extends Vue {
-
-    data() {
-      return {
-        arrow: false,
-        drag: true,
-        gray: false,
-        opacity: false,
-        values: 1,
-        perList: 1,
-        repeat: false,
-        items: [
-          {
-            title: 'Slide 1',
-            image: 'http://turisticna-kmetija-hribar.si/images/camp/DSC06619-480.jpg'
-          },
-          {
-            title: 'Slide 2',
-            image: 'http://turisticna-kmetija-hribar.si/images/camp/DSC06618-480.jpg'
-          },
-          {
-            title: 'Slide 3',
-            image: 'http://turisticna-kmetija-hribar.si/images/camp/DSC00770-480.jpg'
-          },
-          {
-            title: 'Slide 4',
-            image: 'http://turisticna-kmetija-hribar.si/images/camp/DSC00367-480.jpg'
-          }
-        ]
-      }
-    }
   }
 </script>
