@@ -2,13 +2,13 @@
   <div class="columns">
     <div class="column is-two-thirds">
       <b-button class="is-small">Change</b-button>
-      <CampingInquiryContent></CampingInquiryContent>
+      <component :is="active.content"></component>
     </div>
     <div class="column">
       <div class="card">
         <header class="card-header">
           <p class="card-header-title">
-            {{ pricing.base }}€<small>per night</small>
+            {{ pricing.base }}€<small>per <template v-if="pricing.type=='per-night'">night</template><template v-else>person</template></small>
           </p>
         </header>
         <div class="card-content">
@@ -53,6 +53,7 @@
   import {Component, Vue, Watch} from 'vue-property-decorator';
   import GuestsPicker from "@/components/inputs/GuestsPicker.vue";
   import CampingInquiryContent from "@/components/content/CampingInquiry.vue";
+  import GrandApartmentInquiryContent from "@/components/content/GrandApartmentInquiry.vue";
 
   @Component({
     components: {GuestsPicker, CampingInquiryContent}
@@ -64,6 +65,22 @@
       adults: 1,
       children: 0,
       infants: 0
+    }
+    accommodation
+    active
+
+    configs = {
+      'camping': {
+        content: CampingInquiryContent
+      },
+        'grand-apartment': {
+        content: GrandApartmentInquiryContent
+      }
+    }
+
+    created() {
+      this.accommodation = this.$route.params.accommodation
+      this.active = this.configs[this.accommodation]
     }
 
     get passes() {
@@ -77,6 +94,9 @@
     }
 
     get modifier() {
+      if (this.pricing.type == 'per-night') {
+        return this.duration
+      }
       return this.duration * (this.guests.adults + this.guests.children)
     }
 
@@ -93,7 +113,7 @@
     }
 
     get pricing() {
-      return this.$store.state.pricing.camp;
+      return this.$store.state.pricing[this.accommodation];
     }
 
     @Watch('passes')

@@ -7,7 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     pricing: {
-      camp: {
+      camping: {
         type: 'per-person',
         base: 0,
         tax: 0

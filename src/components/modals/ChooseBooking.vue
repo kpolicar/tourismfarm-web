@@ -13,14 +13,18 @@
           </clipPath>
         </defs>
 
-        <image id="apartment"
-               preserveAspectRatio="xMidYMin slice"
-               xlink:href="http://turisticna-kmetija-hribar.si/images/grand-apartment/DSC06638-1600.jpg"
-               x="0" y="0" height="5.6" width="10"
-               clip-path="url(#apartment-clip)">
-        </image>
+        <router-link :to="{name: 'inquiry', params: {accommodation: 'grand-apartment'}}"
+                     @click.native="$parent.close()">
+          <image id="apartment"
+                 preserveAspectRatio="xMidYMin slice"
+                 xlink:href="http://turisticna-kmetija-hribar.si/images/grand-apartment/DSC06638-1600.jpg"
+                 x="0" y="0" height="5.6" width="10"
+                 clip-path="url(#apartment-clip)">
+          </image>
+        </router-link>
 
-        <router-link :to="{name: 'inquiry', query: {target: 'camping'}}">
+        <router-link :to="{name: 'inquiry', params: {accommodation: 'camping'}}"
+                     @click.native="$parent.close()">
           <image id="camping"
                  preserveAspectRatio="xMidYMax slice"
                  xlink:href="https://wallpaperset.com/w/full/8/1/2/216250.jpg"
