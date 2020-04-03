@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-large">
+  <div class="hero is-large">
     <div class="hero-body">
       <div class="container has-text-centered">
         <h2 class="subtitle">
@@ -17,7 +17,7 @@
         </button>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts">

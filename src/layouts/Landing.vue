@@ -1,8 +1,12 @@
 <template>
-  <div id="default-layout">
-    <LandingHero></LandingHero>
+  <div id="landing-layout">
+    <section class="section is-paddingless">
+      <LandingHero></LandingHero>
+    </section>
+
     <router-view></router-view>
-    <section class="section container">
+
+    <section class="section">
       <div class="columns">
         <div class="column">
           <LanguageSelector></LanguageSelector>
@@ -15,7 +19,10 @@
         </div>
       </div>
     </section>
-    <Footer></Footer>
+
+    <section class="section is-paddingless">
+      <Footer></Footer>
+    </section>
   </div>
 </template>
 
@@ -35,18 +42,14 @@
 </script>
 
 
-<style lang="scss" scoped>
-  ::v-deep section {
+<style lang="scss">
+  section {
     padding: $section-spacing 0;
-  }
-
-  ::v-deep .contrast .section-divider {
-    margin-top: $section-spacing;
-    margin-bottom: -$section-spacing;
-    fill: $white-ter;
-  }
-
-  ::v-deep .contrast section {
-    background-color: $white-ter;
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-top: 0;
+    }
   }
 </style>

@@ -14,7 +14,8 @@ const routes = [
   {
     path: '/inquiry',
     name: 'inquiry',
-    component: () => import('../views/Inquiry.vue'),
+    component: () => import('@/views/Inquiry.vue'),
+    meta: {layout: 'form'}
   },
 ];
 

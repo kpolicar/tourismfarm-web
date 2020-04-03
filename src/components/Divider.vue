@@ -11,6 +11,3 @@
   export default class Divider extends Vue {
   }
 </script>
-
-<style lang="scss">
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-fullheight video">
+  <div class="hero is-fullheight video">
     <div class="hero-video">
       <video playsinline autoplay muted loop>
         <source src="" type="video/mp4"/>
@@ -24,7 +24,7 @@
         </button>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts">

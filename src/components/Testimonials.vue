@@ -1,5 +1,5 @@
 <template>
-  <section class="container has-text-centered">
+  <div class="container has-text-centered">
     <h2 class="title">What our guests say</h2>
     <h3 class="subtitle">Testimonials</h3>
     <b-carousel-list
@@ -27,7 +27,7 @@
     <button class="button is-primary is-medium is-rounded">
       Get in touch
     </button>
-  </section>
+  </div>
 </template>
 
 <script lang="ts">

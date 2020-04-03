@@ -1,12 +1,22 @@
 <template>
-  <div>
-    <Testimonials></Testimonials>
-    <div class="contrast">
+  <fragment>
+    <section class="section">
+      <Testimonials></Testimonials>
+    </section>
+
+    <section class="section is-paddingless is-contrasted">
       <Divider></Divider>
-      <WhyUs></WhyUs>
-    </div>
-    <PromoHero></PromoHero>
-  </div>
+      <div>
+        <div class="container">
+          <WhyUs></WhyUs>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-paddingless">
+      <PromoHero></PromoHero>
+    </section>
+  </fragment>
 </template>
 
 <script lang="ts">

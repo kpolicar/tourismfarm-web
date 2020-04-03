@@ -27,6 +27,3 @@
   export default class ContactInfo extends Vue {
   }
 </script>
-
-<style lang="scss" scoped>
-</style>

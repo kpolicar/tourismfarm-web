@@ -11,7 +11,7 @@
       paddingless>
       <form action="">
         <div class="modal-card is-fullwidth">
-          <section class="modal-card-body">
+          <div class="modal-card-body">
             <b-field label="Adults" horizontal custom-class="is-normal">
               <b-numberinput v-model="computedAdults" min="1"></b-numberinput>
             </b-field>
@@ -23,7 +23,7 @@
             <b-field label="Infants" horizontal custom-class="is-normal">
               <b-numberinput v-model="computedInfants" min="0"></b-numberinput>
             </b-field>
-          </section>
+          </div>
           <footer class="modal-card-foot">
             8 guests maximum. Infants don’t count toward the number of guests.
           </footer>

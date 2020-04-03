@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <fragment>
     <nav class="navbar is-transparent" role="navigation">
         <a class="navbar-item has-text-centered" href="#">
           Contact
@@ -18,7 +18,7 @@
         </p>
       </div>
     </footer>
-  </section>
+  </fragment>
 </template>
 
 <script lang="ts">

@@ -1,24 +1,10 @@
 <template>
-  <div id="default-layout">
+  <div id="form-layout">
     <section class="section is-paddingless">
       <QuickNavigation></QuickNavigation>
     </section>
 
     <router-view></router-view>
-
-    <section class="section">
-      <div class="columns">
-        <div class="column">
-          <LanguageSelector></LanguageSelector>
-        </div>
-        <div class="column">
-          <ContactInfo></ContactInfo>
-        </div>
-        <div class="column">
-          <SocialButtons></SocialButtons>
-        </div>
-      </div>
-    </section>
 
     <section class="section is-paddingless">
       <Footer></Footer>
@@ -45,7 +31,7 @@
       LandingHero
     },
   })
-  export default class DefaultLayout extends Vue {
+  export default class FormLayout extends Vue {
   }
 </script>
 

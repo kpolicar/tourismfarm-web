@@ -32,3 +32,12 @@ body {
 .modal-card.is-fullwidth {
   width: 100%;
 }
+
+.is-contrasted {
+  svg.section-divider {
+    fill: $white-ter;
+  }
+  *:not(.section-divider) {
+    background-color: $white-ter;
+  }
+}
