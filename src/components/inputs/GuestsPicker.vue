@@ -13,15 +13,15 @@
         <div class="modal-card is-fullwidth">
           <div class="modal-card-body">
             <b-field label="Adults" horizontal custom-class="is-normal">
-              <b-numberinput v-model="computedAdults" min="1"></b-numberinput>
+              <b-numberinput name="adults" v-model="computedAdults" min="1"></b-numberinput>
             </b-field>
 
             <b-field label="Children" horizontal custom-class="is-normal">
-              <b-numberinput v-model="computedChildren" min="0"></b-numberinput>
+              <b-numberinput name="children" v-model="computedChildren" min="0"></b-numberinput>
             </b-field>
 
             <b-field label="Infants" horizontal custom-class="is-normal">
-              <b-numberinput v-model="computedInfants" min="0"></b-numberinput>
+              <b-numberinput name="infants" v-model="computedInfants" min="0"></b-numberinput>
             </b-field>
           </div>
           <footer class="modal-card-foot">

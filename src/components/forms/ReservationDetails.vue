@@ -16,6 +16,7 @@
           <b-field label="Add dates to reservation" custom-class="is-normal">
             <b-datepicker
               placeholder="Check in - check out"
+              name="dates"
               v-model="dates"
               :min-date="new Date()"
               range>
