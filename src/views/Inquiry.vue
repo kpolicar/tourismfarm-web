@@ -1,5 +1,5 @@
 <template>
-  <form action="http://localhost:8000/api/posted" method="POST" v-on:submit.prevent="onSubmit">
+  <form @submit.prevent="onSubmit">
     <b-steps
       v-model="progress"
       animated
@@ -45,6 +45,7 @@
   import Confirmation from "@/components/forms/Confirmation.vue";
   import Amenities from "@/components/Amenities.vue";
   import Form from "@/layouts/Form.vue";
+  import Api from "@/services/api/Inquiry";
 
   @Component({
     components: {Form}
@@ -58,32 +59,26 @@
         component: ReservationDetails,
         title: 'Inquiry details',
         complete: false,
-        value: {},
       },
       {
         component: GuestDetails,
         title: 'Contact info',
         complete: false,
-        value: {}
       },
       {
         component: Confirmation,
         title: 'Finish',
         complete: false,
-        value: {}
       },
     ]
-
-    stepFinished() {
-      this.progress++;
-    }
 
     stepChanged(index: number, passes: boolean) {
       this.steps[index].complete = passes;
     }
 
     onSubmit() {
-      console.log(this.formData)
+      Api.postInquiry(this.formData)
+        .then(result => console.log(result));
     }
 
     aggregate(data: object) {

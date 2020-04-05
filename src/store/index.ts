@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import api from '@/services/api/Price.ts'
+import PricesApi from '@/services/api/Price.ts'
 
 Vue.use(Vuex);
 
@@ -21,7 +21,7 @@ export default new Vuex.Store({
   },
   actions: {
     updatePricing({ commit }) {
-      api.getPricing()
+      PricesApi.getPricing()
         .then(data => commit('setPricing', data))
     }
   },
