@@ -1,9 +1,11 @@
 <template>
   <div class="hero is-fullheight video">
     <div class="hero-video">
-      <video playsinline autoplay muted loop>
+      <parallax>
+      <video playsinline autoplay muted loop poster="@/assets/hero.jpg">
         <source src="" type="video/mp4"/>
       </video>
+      </parallax>
     </div>
 
     <div class="hero-head">
@@ -31,9 +33,10 @@
   import {Component, Vue} from 'vue-property-decorator';
   import QuickNavigation from '@/components/QuickNavigation.vue';
   import ChooseBookingModal from '@/components/modals/ChooseBooking.vue';
+  import Parallax from 'vue-parallaxy';
 
   @Component({
-    components: {QuickNavigation,},
+    components: {QuickNavigation, Parallax},
   })
   export default class LandingHero extends Vue {
     cardModal() {
@@ -54,9 +57,6 @@
     fill: $white-bis;
   }
   .hero {
-    background: center center url('~@/assets/hero.jpg');
-    background-size: cover;
-
     .hero-body {
       .title {
         color: $text-invert;

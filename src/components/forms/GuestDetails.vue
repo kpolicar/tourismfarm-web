@@ -48,7 +48,7 @@
   })
   export default class GuestDetailsForm extends Vue {
 
-    value = {
+    value: DataModel = {
       name: '',
       email: '',
       message: '',

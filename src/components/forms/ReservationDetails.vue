@@ -73,7 +73,7 @@
     components: {GuestsPicker, CampingInquiryContent}
   })
   export default class ReservationDetailsForm extends Vue {
-    value = {
+    value: DataModel = {
       dates: [],
       guests: { adults: 1, children: 0, infants: 0 }
     }
