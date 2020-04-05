@@ -10,7 +10,7 @@
 
 <script lang="ts">
   import {Component, Prop, Vue} from 'vue-property-decorator';
-  import RoundSvg from '@/assets/dividers/round.svg';
+  import RoundSvg from '@/assets/dividers/round.svg?inline';
 
   @Component({
     components: {RoundSvg}
