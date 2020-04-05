@@ -11,7 +11,6 @@
                height="100px"
                width="100%"
                class="section-divider"
-               style="transform: rotate(180deg)"
                :is="dividers[bottom]"></component>
   </div>
 </template>
@@ -19,9 +18,10 @@
 <script lang="ts">
   import {Component, Prop, Vue} from 'vue-property-decorator';
   import RoundSvg from '@/assets/dividers/round.svg?inline';
+  import TriangleSvg from '@/assets/dividers/triangle.svg?inline';
 
   @Component({
-    components: {RoundSvg}
+    components: {RoundSvg, TriangleSvg}
   })
   export default class Divider extends Vue {
     @Prop({type: [Boolean, String]})
@@ -32,6 +32,18 @@
     dividers = {
       true: RoundSvg,
       'round': RoundSvg,
+      'triangle': TriangleSvg,
     }
   }
 </script>
+
+<style lang="scss" scoped>
+ svg {
+   ::v-deep path.is-primary {
+     fill: whitesmoke;
+   }
+   ::v-deep path.is-secondary {
+     fill: #e1e1e1;
+   }
+ }
+</style>
