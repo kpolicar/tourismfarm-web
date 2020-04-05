@@ -1,6 +1,6 @@
 <template>
   <div class="container has-text-centered">
-    <h2 class="title">What our guests say</h2>
+    <h2 class="title title-new">What our guests say</h2>
     <h3 class="subtitle">Testimonials</h3>
     <b-carousel-list
       v-model="values"

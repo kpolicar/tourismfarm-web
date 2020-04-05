@@ -6,11 +6,18 @@
 @import "~bulma";
 @import "~bulma-divider";
 @import "~buefy/src/scss/buefy";
+@import "card.scss";
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+.title-new {
+  color: gray;
+  text-transform: uppercase;
+  letter-spacing: 6px;
 }
 
 .heading, .title {

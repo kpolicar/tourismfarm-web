@@ -4,6 +4,10 @@
       <Testimonials></Testimonials>
     </section>
 
+    <section class="section">
+      <Apartments></Apartments>
+    </section>
+
     <section class="section is-paddingless is-contrasted">
       <Divider></Divider>
       <div>
@@ -25,9 +29,10 @@
   import WhyUs from "@/components/WhyUs.vue";
   import PromoHero from "@/components/PromoHero.vue";
   import Divider from "@/components/Divider.vue";
+  import Apartments from "@/components/Apartments.vue";
 
   @Component({
-    components: {WhyUs, Testimonials, PromoHero, Divider}
+    components: {Apartments, WhyUs, Testimonials, PromoHero, Divider}
   })
   export default class Home extends Vue {
   }
