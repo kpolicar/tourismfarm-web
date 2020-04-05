@@ -9,12 +9,11 @@
     </section>
 
     <section class="section is-paddingless is-contrasted">
-      <Divider></Divider>
-      <div>
+      <Divider>
         <div class="container">
           <WhyUs></WhyUs>
         </div>
-      </div>
+      </Divider>
     </section>
 
     <section class="section is-paddingless">

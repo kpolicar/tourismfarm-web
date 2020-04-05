@@ -43,6 +43,7 @@ body {
 .is-contrasted {
   svg.section-divider {
     fill: $white-ter;
+    background: #fff;
   }
   *:not(.section-divider) {
     background-color: $white-ter;

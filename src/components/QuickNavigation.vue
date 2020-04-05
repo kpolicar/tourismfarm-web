@@ -2,7 +2,7 @@
   <b-navbar>
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
-        <img svg-inline src="@/assets/logo.svg" class="logo" width="128px" height="128px"/>
+        <LogoSvg src="@/assets/logo.svg" class="logo" width="128px" height="128px"/>
       </b-navbar-item>
     </template>
 
@@ -21,8 +21,11 @@
 
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
+  import LogoSvg from '@/assets/logo.svg'
 
-  @Component({})
+  @Component({
+    components: {LogoSvg}
+  })
   export default class QuickNavigation extends Vue {
     data() {
       return {
