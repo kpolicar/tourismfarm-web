@@ -1,25 +1,30 @@
 <template>
   <div>
     <b-field label="Full name" horizontal custom-class="is-normal">
-      <b-input v-model="name"
+      <b-input v-model="value.name"
+               name="name"
                type="text"
                placeholder="John Doe"
                icon="user"
                minlength="5"
-               maxlength="100">
+               maxlength="100"
+               required>
       </b-input>
     </b-field>
     <b-field label="Email" horizontal custom-class="is-normal">
-      <b-input v-model="email"
+      <b-input v-model="value.email"
+               name="email"
                type="email"
                placeholder="example@domain.com"
                icon="envelope"
                minlength="5"
-               maxlength="100">
+               maxlength="100"
+               required>
       </b-input>
     </b-field>
     <b-field label="Message (optional)" horizontal custom-class="is-normal">
-      <b-input v-model="message"
+      <b-input v-model="value.message"
+               name="message"
                maxlength="300"
                type="textarea">
 
@@ -32,17 +37,31 @@
   import {Component, Vue, Watch} from 'vue-property-decorator';
   import GuestsPicker from "@/components/inputs/GuestsPicker.vue";
 
+  export interface DataModel {
+    name: string,
+    email: string,
+    message: string
+  }
+
   @Component({
     components: {GuestsPicker}
   })
   export default class GuestDetailsForm extends Vue {
 
-    name: string = ''
-    email: string = ''
-    message: string = ''
+    value = {
+      name: '',
+      email: '',
+      message: '',
+    }
+
 
     get passes() {
-      return this.name.length > 1 && this.email.length > 1
+      return this.value.name.length > 1 && this.value.email.length > 1
+    }
+
+    @Watch('value', { deep: true })
+    valueChanged(value: DataModel) {
+      this.$emit('input', value)
     }
 
     @Watch('passes')

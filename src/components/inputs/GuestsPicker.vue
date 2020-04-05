@@ -9,26 +9,24 @@
       :focusable="false"
       custom
       paddingless>
-      <form action="">
-        <div class="modal-card is-fullwidth">
-          <div class="modal-card-body">
-            <b-field label="Adults" horizontal custom-class="is-normal">
-              <b-numberinput v-model="computedAdults" min="1"></b-numberinput>
-            </b-field>
+      <div class="modal-card is-fullwidth">
+        <div class="modal-card-body">
+          <b-field label="Adults" horizontal custom-class="is-normal">
+            <b-numberinput :name="name+'[adults]'" v-model="computedAdults" min="1"></b-numberinput>
+          </b-field>
 
-            <b-field label="Children" horizontal custom-class="is-normal">
-              <b-numberinput v-model="computedChildren" min="0"></b-numberinput>
-            </b-field>
+          <b-field label="Children" horizontal custom-class="is-normal">
+            <b-numberinput :name="name+'[children]'" v-model="computedChildren" min="0"></b-numberinput>
+          </b-field>
 
-            <b-field label="Infants" horizontal custom-class="is-normal">
-              <b-numberinput v-model="computedInfants" min="0"></b-numberinput>
-            </b-field>
-          </div>
-          <footer class="modal-card-foot">
-            8 guests maximum. Infants don’t count toward the number of guests.
-          </footer>
+          <b-field label="Infants" horizontal custom-class="is-normal">
+            <b-numberinput :name="name+'[infants]'" v-model="computedInfants" min="0"></b-numberinput>
+          </b-field>
         </div>
-      </form>
+        <footer class="modal-card-foot">
+          8 guests maximum. Infants don’t count toward the number of guests.
+        </footer>
+      </div>
     </b-dropdown-item>
   </b-dropdown>
 </template>
@@ -38,6 +36,9 @@
 
   @Component({})
   export default class GuestsPicker extends Vue {
+    @Prop({ required: true })
+    name!: string
+
     @Prop({
       default: {
         adults: 1, children: 0, infants: 0,

@@ -1,6 +1,8 @@
 <template>
   <div>
     <b-button size="is-medium"
+              tag="input"
+              native-type="submit"
               type="is-primary"
               icon-right="upload"
               @click="$emit('passes', true)">

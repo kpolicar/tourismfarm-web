@@ -8,7 +8,7 @@
       <div class="card">
         <header class="card-header">
           <p class="card-header-title">
-            {{ pricing.base }}€<small>per <template v-if="pricing.type=='per-night'">night</template><template v-else>person</template></small>
+            {{ pricing.base }}€<small>per <template v-if="pricing.type==='per-night'">night</template><template v-else>person</template></small>
           </p>
         </header>
         <div class="card-content">
@@ -16,13 +16,14 @@
           <b-field label="Add dates to reservation" custom-class="is-normal">
             <b-datepicker
               placeholder="Check in - check out"
-              v-model="dates"
+              name="dates"
+              v-model="value.dates"
               :min-date="new Date()"
               range>
             </b-datepicker>
           </b-field>
           <b-field label="Guests" custom-class="is-normal">
-            <GuestsPicker v-model="guests"></GuestsPicker>
+            <GuestsPicker name="guests" v-model="value.guests"></GuestsPicker>
           </b-field>
 
           <table class="table is-fullwidth" v-if="passes">
@@ -50,10 +51,19 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue, Watch} from 'vue-property-decorator';
+  import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
   import GuestsPicker from "@/components/inputs/GuestsPicker.vue";
   import CampingInquiryContent from "@/components/content/CampingInquiry.vue";
   import GrandApartmentInquiryContent from "@/components/content/GrandApartmentInquiry.vue";
+
+  export interface DataModel {
+    dates: Array<Date>,
+    guests: {
+      adults: number,
+      children: number,
+      infants: number
+    }
+  }
 
   interface AccommodationConfig {
     content: typeof Vue
@@ -63,16 +73,14 @@
     components: {GuestsPicker, CampingInquiryContent}
   })
   export default class ReservationDetailsForm extends Vue {
-
-    dates: Array<Date> = []
-    guests = {
-      adults: 1,
-      children: 0,
-      infants: 0
+    value = {
+      dates: [],
+      guests: { adults: 1, children: 0, infants: 0 }
     }
-    accommodation!: string
-    active!: AccommodationConfig
 
+    accommodation!: string
+
+    active!: AccommodationConfig
     configs : { [key: string]: AccommodationConfig } = {
       'camping': {
         content: CampingInquiryContent
@@ -88,11 +96,11 @@
     }
 
     get passes() {
-      return this.dates.length > 0 && this.guests.adults > 0;
+      return this.value.dates.length > 0 && this.value.guests.adults > 0;
     }
 
     get duration() {
-      let dateDiff = Math.abs(this.dates[0].getTime() - this.dates[1].getTime())
+      let dateDiff = Math.abs(this.value.dates[0].getTime() - this.value.dates[1].getTime())
 
       return dateDiff / (1000 * 60 * 60 * 24) + 1;
     }
@@ -101,7 +109,7 @@
       if (this.pricing.type == 'per-night') {
         return this.duration
       }
-      return this.duration * (this.guests.adults + this.guests.children)
+      return this.duration * (this.value.guests.adults + this.value.guests.children)
     }
 
     get price() {
@@ -118,6 +126,11 @@
 
     get pricing() {
       return this.$store.state.pricing[this.accommodation];
+    }
+
+    @Watch('value', { deep: true })
+    valueChanged(value: DataModel) {
+      this.$emit('input', value)
     }
 
     @Watch('passes')

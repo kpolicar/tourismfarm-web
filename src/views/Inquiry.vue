@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <form action="http://localhost:8000/api/posted" method="POST" v-on:submit.prevent="onSubmit">
     <b-steps
       v-model="progress"
       animated
@@ -8,7 +8,7 @@
       <b-step-item :label="step.title" v-for="(step, index) in steps" :clickable="step.complete" :type="{'is-success': step.complete}">
         <h1 class="title has-text-centered" v-if="step.title">{{ step.title }}</h1>
         <div class="container">
-          <component :is="step.component" @passes="stepChanged(index, $event)"></component>
+          <component :is="step.component" @input="aggregate($event)" @passes="stepChanged(index, $event)"></component>
         </div>
       </b-step-item>
 
@@ -35,7 +35,7 @@
         </div>
       </template>
     </b-steps>
-  </div>
+  </form>
 </template>
 
 <script lang="ts">
@@ -44,25 +44,33 @@
   import GuestDetails from "@/components/forms/GuestDetails.vue";
   import Confirmation from "@/components/forms/Confirmation.vue";
   import Amenities from "@/components/Amenities.vue";
+  import Form from "@/layouts/Form.vue";
 
-  @Component({})
+  @Component({
+    components: {Form}
+  })
   export default class Inquiry extends Vue {
     progress = 0
+
+    formData = {};
     steps = [
       {
         component: ReservationDetails,
         title: 'Inquiry details',
-        complete: false
+        complete: false,
+        value: {},
       },
       {
         component: GuestDetails,
         title: 'Contact info',
-        complete: false
+        complete: false,
+        value: {}
       },
       {
         component: Confirmation,
         title: 'Finish',
-        complete: false
+        complete: false,
+        value: {}
       },
     ]
 
@@ -72,6 +80,14 @@
 
     stepChanged(index: number, passes: boolean) {
       this.steps[index].complete = passes;
+    }
+
+    onSubmit() {
+      console.log(this.formData)
+    }
+
+    aggregate(data: object) {
+      Object.assign(this.formData, data);
     }
   }
 </script>
