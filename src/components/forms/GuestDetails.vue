@@ -56,7 +56,11 @@
 
 
     get passes() {
-      return this.value.name.length > 1 && this.value.email.length > 1
+      let {name, email, message} = this.value;
+
+      return name.length >= 5 && name.length <= 100 &&
+             email.length >= 5 && email.length <= 100 && email.match('@.+') &&
+             message.length <= 300;
     }
 
     @Watch('value', { deep: true })

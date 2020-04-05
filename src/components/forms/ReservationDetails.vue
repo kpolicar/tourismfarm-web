@@ -96,7 +96,8 @@
     }
 
     get passes() {
-      return this.value.dates.length > 0 && this.value.guests.adults > 0;
+      return this.value.dates.length == 2 &&
+             this.value.guests.adults > 0;
     }
 
     get duration() {
