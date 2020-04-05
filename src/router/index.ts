@@ -17,6 +17,11 @@ const routes = [
     component: () => import('@/views/Inquiry.vue'),
     meta: {layout: 'form'}
   },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import('@/views/Inquiry.vue'),
+  },
 ];
 
 const router = new VueRouter({

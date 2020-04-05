@@ -10,7 +10,7 @@
       <b-navbar-item tag="div">
         <div class="buttons">
           <router-link :to="link" v-for="link in links" class="button is-rounded"
-                       exact-active-class="is-primary">
+                       exact-active-class="is-primary" :event="link.name!=='about' ? 'click': ''">
             {{ link.title }}
           </router-link>
         </div>
