@@ -1,11 +1,11 @@
 <template>
   <div class="hero is-fullheight video">
     <div class="hero-video">
-      <parallax>
+      <Parallax>
       <video playsinline autoplay muted loop poster="@/assets/hero.jpg">
         <source src="" type="video/mp4"/>
       </video>
-      </parallax>
+      </Parallax>
     </div>
 
     <div class="hero-head">
