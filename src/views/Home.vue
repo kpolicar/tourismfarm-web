@@ -9,7 +9,7 @@
     </section>
 
     <section class="section is-paddingless is-contrasted">
-      <Divider>
+      <Divider top>
         <div class="container">
           <WhyUs></WhyUs>
         </div>

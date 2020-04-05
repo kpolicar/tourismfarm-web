@@ -13,13 +13,18 @@ module.exports = {
       .end()
       .use('vue-svg-loader')
       .loader('vue-svg-loader')
+      .options({
+        svgo: {
+          plugins: [{ removeDimensions: true }, { removeViewBox: false }]
+        }
+      })
       .end()
       .end()
       .oneOf('external')
       .use('file-loader')
       .loader('file-loader')
       .options({
-        name: 'assets/[name].[hash:8].[ext]',
+        name: 'assets/[name].[hash:8].[ext]'
       });
   },
   css: {

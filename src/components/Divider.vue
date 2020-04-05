@@ -1,10 +1,18 @@
 <template>
   <div class="is-divided">
     <component v-if="top"
+               height="100px"
+               width="100%"
                class="section-divider"
-               :is="dividers[topType]"></component>
+               :is="dividers[top]"></component>
 
     <slot></slot>
+    <component v-if="bottom"
+               height="100px"
+               width="100%"
+               class="section-divider"
+               style="transform: rotate(180deg)"
+               :is="dividers[bottom]"></component>
   </div>
 </template>
 
@@ -16,25 +24,14 @@
     components: {RoundSvg}
   })
   export default class Divider extends Vue {
-    @Prop({type: Boolean, default: true})
-    top!: boolean
-    @Prop({type: Boolean})
-    bottom!: boolean
-
-    @Prop({default: 'round'})
-    topType!: string
-    @Prop({default: 'round'})
-    bottomType!: string
-
+    @Prop({type: [Boolean, String]})
+    top!: boolean | string
+    @Prop({type: [Boolean, String]})
+    bottom!: boolean | string
 
     dividers = {
-      round: RoundSvg
+      true: RoundSvg,
+      'round': RoundSvg,
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  svg {
-    width: 100%;
-  }
-</style>
