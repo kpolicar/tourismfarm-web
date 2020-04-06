@@ -1,20 +1,28 @@
 <template>
   <fragment>
-    <section class="section">
+    <Divider bottom="triangle"
+             tag="section"
+             custom-class="section"
+             :transition="{to: 'is-contrasted'}">
       <Testimonials></Testimonials>
-    </section>
+    </Divider>
 
     <section class="section">
       <Apartments></Apartments>
     </section>
 
-    <section class="section is-paddingless is-contrasted">
-      <Divider top bottom="triangle">
+    <section class="section">
+      <Dormitories></Dormitories>
+    </section>
+
+    <Divider top
+             tag="section"
+             custom-class="section"
+             :transition="{to: 'is-contrasted'}">
         <div class="container">
           <WhyUs></WhyUs>
         </div>
-      </Divider>
-    </section>
+    </Divider>
 
     <section class="section is-paddingless">
       <PromoHero></PromoHero>
@@ -29,9 +37,10 @@
   import PromoHero from "@/components/PromoHero.vue";
   import Divider from "@/components/Divider.vue";
   import Apartments from "@/components/Apartments.vue";
+  import Dormitories from "@/components/Dormitories.vue";
 
   @Component({
-    components: {Apartments, WhyUs, Testimonials, PromoHero, Divider}
+    components: {Dormitories, Apartments, WhyUs, Testimonials, PromoHero, Divider}
   })
   export default class Home extends Vue {
   }
