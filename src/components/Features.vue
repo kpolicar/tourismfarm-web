@@ -1,14 +1,10 @@
 <template>
-  <nav class="level is-bold">
-    <div class="level-item has-text-centered" v-for="feature in features">
-      <div>
-        <p class="title">
-          <b-icon :icon="feature.icon" type="is-primary"></b-icon>
-        </p>
-        <p class="heading">{{ feature.title }}</p>
-      </div>
+  <div class="columns has-text-centered is-mobile">
+    <div class="column" v-for="feature in features">
+      <b-icon :icon="feature.icon" type="is-primary" size="is-large"></b-icon>
+      <p class="heading">{{ feature.title }}</p>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script lang="ts">
@@ -31,7 +27,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .level-item:hover .heading {
+  .column:hover > .heading {
     color: $primary;
     transition-duration: $speed;
   }
