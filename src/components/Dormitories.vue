@@ -39,20 +39,20 @@
         min: 4,
         max: 6,
         price: 80,
-        image: 'http://www.turisticna-kmetija-hribar.si/images/dormitory/ezgif-5-c5b8df47c0-480.jpg'
+        image: 'https://www.turisticna-kmetija-hribar.si/images/dormitory/ezgif-5-c5b8df47c0-480.jpg'
       },
       {
         title: 'Pod',
         min: 4,
         price: 80,
-        image: 'http://www.turisticna-kmetija-hribar.si/images/pod/ezgif-5-f87ea3d696-480.jpg'
+        image: 'https://www.turisticna-kmetija-hribar.si/images/pod/ezgif-5-f87ea3d696-480.jpg'
       },
       {
         title: 'Small room',
         min: 1,
         max: 2,
         price: 80,
-        image: 'http://www.turisticna-kmetija-hribar.si/images/small-room/ezgif-5-b232e9201e-480.jpg'
+        image: 'https://www.turisticna-kmetija-hribar.si/images/small-room/ezgif-5-b232e9201e-480.jpg'
       },
     ]
   }

@@ -17,7 +17,7 @@
                      @click.native="$parent.close()">
           <image id="apartment"
                  preserveAspectRatio="xMidYMin slice"
-                 xlink:href="http://turisticna-kmetija-hribar.si/images/grand-apartment/DSC06638-1600.jpg"
+                 xlink:href="https://turisticna-kmetija-hribar.si/images/grand-apartment/DSC06638-1600.jpg"
                  x="0" y="0" height="5.6" width="10"
                  clip-path="url(#apartment-clip)">
           </image>

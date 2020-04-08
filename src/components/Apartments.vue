@@ -39,20 +39,20 @@
         min: 4,
         max: 6,
         price: 80,
-        image: 'http://turisticna-kmetija-hribar.si/images/grand-apartment/DSC06638-480.jpg'
+        image: 'https://turisticna-kmetija-hribar.si/images/grand-apartment/DSC06638-480.jpg'
       },
       {
         title: 'Large apartment',
         min: 4,
         price: 80,
-        image: 'http://turisticna-kmetija-hribar.si/images/large-apartment/DSC01391edit-480.jpg'
+        image: 'https://turisticna-kmetija-hribar.si/images/large-apartment/DSC01391edit-480.jpg'
       },
       {
         title: 'Rustic apartment',
         min: 4,
         max: 6,
         price: 80,
-        image: 'http://turisticna-kmetija-hribar.si/images/rustic-apartment/WP_20171229_15_21_23_Pro-480.jpg'
+        image: 'https://turisticna-kmetija-hribar.si/images/rustic-apartment/WP_20171229_15_21_23_Pro-480.jpg'
       },
     ]
   }
