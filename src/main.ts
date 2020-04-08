@@ -12,16 +12,17 @@ import DefaultLayout from '@/layouts/Default.vue';
 import LandingLayout from '@/layouts/Landing.vue';
 import FormLayout from "@/layouts/Form.vue";
 
-Axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 
 window.Pusher = require('pusher-js');
 
+Axios.defaults.baseURL = process.env.VUE_APP_API_URL;
+
+Vue.prototype.$http = Axios;
 Vue.prototype.$echo = new Echo({
   broadcaster: 'pusher',
   host: 'ws://ws-mt1.pusher.com/app/12ae4861e7cfe43c382f',
   key: process.env.VUE_APP_PUSHER_KEY
 });
-Vue.prototype.$http = Axios;
 
 Vue.config.productionTip = false;
 

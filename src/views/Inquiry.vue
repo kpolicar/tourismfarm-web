@@ -55,7 +55,7 @@
     component: typeof Vue | any
     title: string
     props?: { [key:string]: any }
-    events?: { [key:string]: ($event) => void }
+    events?: { [key:string]: ($event: any) => void }
     complete?: boolean
   }
 
