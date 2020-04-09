@@ -22,6 +22,11 @@ const routes = [
     name: 'about',
     component: () => import('@/views/Inquiry.vue'),
   },
+  {
+    path: '/camp',
+    name: 'camp',
+    component: () => import('@/views/Camp.vue'),
+  },
 ];
 
 const router = new VueRouter({

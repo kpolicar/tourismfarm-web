@@ -31,7 +31,7 @@
       return {
         links: [
           {name: 'home', 'title': 'Home'},
-          {name: 'about', 'title': 'Camping'},
+          {name: 'camp', 'title': 'Camping'},
           {name: 'about', 'title': 'Apartments'},
           {name: 'about', 'title': 'Dormitories'},
           {name: 'about', 'title': 'Activities'},
