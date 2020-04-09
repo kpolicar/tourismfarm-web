@@ -1,5 +1,8 @@
 <template>
-  <Accommodation>
+  <Accommodation
+    :amenities="amenities"
+    :images="images">
+    >
     <template v-slot:tabs>
       <b-tab-item label="Campsite details">
         <h2 class="title">Information</h2>
@@ -9,10 +12,15 @@
           keep the grounds clean, tidy and ecologically oriented. We can house up to around 20 tents
           or trailers at a time. The guests are free to pick up fruit from our orchard and
           vegetables upon request.
-        </p><br>
+        </p>
+        <p>There are four showers and washbasins with hot water; an equal number of toilets plus an
+          additional shower.</p>
+        <p>We are happy to assist our guests in any way possible. We also speak fluent English and
+          understand all major European languages.</p>
       </b-tab-item>
 
       <b-tab-item label="Rules">
+        <h2 class='title'>Campsite guidelines</h2>
         <ul>
           <li>Silence between 10:00PM and 7:00AM.</li>
           <li> Guests are kindly expected to keep the camping ground clean and tidy, the garbage
@@ -54,6 +62,16 @@
     components: {Amenities, Accommodation}
   })
   export default class Camp extends Vue {
+
+    amenities = ['parking', 'wifi', 'kitchen', 'washer', 'shower', 'refrigerator']
+    images = [
+      'https://turisticna-kmetija-hribar.si/images/camp/DSC00770-1920.jpg',
+      'https://turisticna-kmetija-hribar.si/images/camp/DSC06618-1920.jpg',
+      'https://turisticna-kmetija-hribar.si/images/camp/DSC00367-1920.jpg',
+      'https://turisticna-kmetija-hribar.si/images/camp/DSC06619-1920.jpg',
+      'https://turisticna-kmetija-hribar.si/images/camp/DSC06624-1920.jpg',
+      'https://turisticna-kmetija-hribar.si/images/camp/DSC06626-1920.jpg',
+    ]
   }
 </script>
 

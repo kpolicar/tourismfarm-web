@@ -23,6 +23,7 @@ Vue.prototype.$echo = new Echo({
   host: 'ws://ws-mt1.pusher.com/app/12ae4861e7cfe43c382f',
   key: process.env.VUE_APP_PUSHER_KEY
 });
+Vue.prototype.$_ = require('underscore');
 
 Vue.config.productionTip = false;
 

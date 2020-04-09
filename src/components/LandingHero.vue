@@ -53,9 +53,6 @@
 </script>
 
 <style lang="scss" scoped>
-  ::v-deep .logo {
-    fill: $white-bis;
-  }
   .hero {
     .hero-body {
       .title {

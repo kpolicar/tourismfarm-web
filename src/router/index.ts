@@ -27,6 +27,11 @@ const routes = [
     name: 'camp',
     component: () => import('@/views/Camp.vue'),
   },
+  {
+    path: '/grand-apartment',
+    name: 'grand-apartment',
+    component: () => import('@/views/GrandApartment.vue'),
+  },
 ];
 
 const router = new VueRouter({

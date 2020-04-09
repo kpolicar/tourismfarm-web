@@ -4,6 +4,9 @@
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <LogoSvg class="logo" width="128px" height="128px"/>
       </b-navbar-item>
+      <b-navbar-item tag="div">
+        <h1 class="title">Grand apartment</h1>
+      </b-navbar-item>
     </template>
 
     <template slot="end">
