@@ -1,12 +1,8 @@
 <template>
-  <b-navbar fixed-top
-            :style="`background: rgb(255, 255, 255, ${opacity}); box-shadow: 0 4px 2px -2px rgb(255, 255, 255, ${opacity});`">
+  <b-navbar>
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
-        <LogoSvg class="logo" :width="logoSize" :height="logoSize" :fill="`rgb(${r}, ${b}, ${g})`" />
-      </b-navbar-item>
-      <b-navbar-item tag="div">
-        <h1 class="title" :style="`color: rgb(${r}, ${b}, ${g})`">Grand apartment</h1>
+        <LogoSvg class="logo" width="128px" height="128px"/>
       </b-navbar-item>
     </template>
 
@@ -31,39 +27,16 @@
     components: {LogoSvg}
   })
   export default class QuickNavigation extends Vue {
-
-    logoSize = 128;
-    r = 255
-    g = 255
-    b = 255
-    opacity = 0
-
-    mounted() {
-
-      this.$nextTick(function(){
-        window.addEventListener("scroll", this.handleScroll);
-      })
-    }
     data() {
       return {
         links: [
           {name: 'home', 'title': 'Home'},
           {name: 'camp', 'title': 'Camping'},
-          {name: 'grand-apartment', 'title': 'Apartments'},
+          {name: 'about', 'title': 'Apartments'},
           {name: 'about', 'title': 'Dormitories'},
           {name: 'about', 'title': 'Activities'},
         ]
       }
-    }
-    handleScroll (event) {
-      let modifier = document.documentElement.scrollTop
-      if (modifier > 100) {
-        modifier = 100;
-      }
-
-      this.logoSize = 128 - (modifier/10*6.4);
-      this.r = this.g = this.b = 255 - modifier * 2
-      this.opacity = modifier/100
     }
   }
 </script>
@@ -79,11 +52,5 @@
 
   ::v-deep .navbar-item {
     font-family: $family-secondary;
-  }
-
-
-  nav {
-    transition: all 0.5s;
-    background: whitesmoke;
   }
 </style>
