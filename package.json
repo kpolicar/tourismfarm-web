@@ -13,6 +13,7 @@
     "core-js": "^3.6.4",
     "laravel-echo": "^1.7.0",
     "pusher-js": "^5.1.1",
+    "underscore": "^1.10.2",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.2",
     "vue-fragment": "^1.5.1",
