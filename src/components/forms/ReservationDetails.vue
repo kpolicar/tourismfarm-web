@@ -85,13 +85,13 @@
       camping: {
         content: CampingInquiryContent
       },
-        grandApartment: {
+      grandApartment: {
         content: GrandApartmentInquiryContent
       }
     }
 
     created() {
-      this.accommodation = _.camelCase(this.$route.params.accommodation)
+      this.accommodation = this._.camelCase(this.$route.params.accommodation)
       this.active = this.configs[this.accommodation]
     }
 

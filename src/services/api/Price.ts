@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Vue from "vue";
 
 interface PriceData {
   type: string
@@ -10,7 +11,7 @@ export default {
   getPricing() {
     return axios.get<PriceData>('/prices')
       .then(payload => {
-        return _.mapKeys(payload.data, (data, apartment) => _.camelCase(apartment));
+        return Vue._.mapKeys(payload.data, (data, apartment) => Vue._.camelCase(apartment));
       })
   }
 }

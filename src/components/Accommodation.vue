@@ -53,9 +53,9 @@
   })
   export default class Accommodation extends Vue {
     @Prop({ required: true })
-    amenities
+    amenities!: Array<string>
     @Prop({ required: true })
-    images
+    images!: Array<string>
     @Prop({ required: true })
     url!: string
 
