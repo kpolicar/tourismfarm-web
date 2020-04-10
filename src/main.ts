@@ -6,6 +6,8 @@ import store from './store'
 import Buefy from 'buefy'
 import Fragment from 'vue-fragment'
 import Echo from 'laravel-echo'
+import VueLodash from 'vue-lodash'
+import lodash from 'lodash'
 import '@fortawesome/fontawesome-free/css/all.css'
 
 import DefaultLayout from '@/layouts/Default.vue';
@@ -22,13 +24,13 @@ Vue.prototype.$echo = new Echo({
   host: 'ws://ws-mt1.pusher.com/app/12ae4861e7cfe43c382f',
   key: process.env.VUE_APP_PUSHER_KEY
 });
-Vue.prototype.$_ = require('underscore');
 
 Vue.config.productionTip = false;
 
 Vue.component('layout-default', DefaultLayout);
 Vue.component('layout-form', FormLayout);
 
+Vue.use(VueLodash, {lodash: lodash})
 Vue.use(Fragment.Plugin)
 Vue.use(Buefy, {
   defaultIconPack: 'fas',
