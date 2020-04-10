@@ -31,7 +31,7 @@
     items!: Array<string>
 
     get features() {
-      return _.pick({
+      return Object.values(_.pick({
         parking: {title: 'Free parking', icon: 'parking'},
         wifi: {title: 'Wifi', icon: 'wifi'},
         kitchen: {title: 'Kitchen', icon: 'utensils'},
@@ -44,7 +44,7 @@
         refrigerator: {title: 'Refrigerator', icon: 'fan'},
         freezer: {title: 'Freezer', icon: 'temperature-low'},
 
-      }, this.items);
+      }, this.items));
     }
   }
 </script>
