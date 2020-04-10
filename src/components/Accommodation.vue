@@ -17,23 +17,25 @@
 
     <section class="section">
       <div class="container">
-        <div class="columns">
-          <div class="column is-two-thirds">
+        <div class="grid">
+          <div style="grid-column: 1 / span 7 !important;">
             <b-tabs size="is-medium"
                     vertical>
               <slot name="tabs"></slot>
             </b-tabs>
           </div>
-          <div class="column" style="background: #3e394d; color: whitesmoke; border-radius: 5px; padding: 3rem 3rem">
-            <slot name="pricing"></slot>
+          <div style="grid-column: 9 / span 4 !important;">
+            <div style="background: #3e394d; color: whitesmoke; border-radius: 5px; padding: 3rem 3rem; position: sticky;top: 80px">
+              <slot name="pricing"></slot>
 
-            <b-button tag="router-link"
-                      :to="{name: 'inquiry', params: {accommodation: 'camping'}}"
-                      type="is-primary"
-                      size="is-medium"
-                      expanded>
-              Make inquiry
-            </b-button>
+              <b-button tag="router-link"
+                        :to="{name: 'inquiry', params: {accommodation: 'camping'}}"
+                        type="is-primary"
+                        size="is-medium"
+                        expanded>
+                Make inquiry
+              </b-button>
+            </div>
           </div>
         </div>
       </div>
@@ -69,10 +71,31 @@
     amenities
     @Prop({ required: true })
     images
+
+    fixedPrices = false
+
+
+    mounted() {
+      this.$nextTick(function(){
+        window.addEventListener("scroll", this.handleScroll);
+      })
+    }
+
+    handleScroll () {
+      let modifier = document.documentElement.scrollTop
+      this.fixedPrices = modifier > 133
+    }
   }
 </script>
 
 <style lang="scss" scoped>
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    grid-column-gap: 16px;
+  }
+
   .heading {
     font-size: 14px;
   }

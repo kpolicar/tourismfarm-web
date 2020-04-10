@@ -33,7 +33,6 @@
             no need to boil it beforehand.
           </li>
         </ul>
-
       </b-tab-item>
     </template>
 

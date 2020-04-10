@@ -51,12 +51,10 @@
 
 <style lang="scss" scoped>
   .icon {
-    font-size: 16px;
     border: 1px solid #999;
-    border-radius: 50%;
+    border-radius: $radius-rounded;
     width: 66px;
     height: 66px;
-    line-height: 66px;
     text-align: center;
     margin-bottom: 10px;
   }
