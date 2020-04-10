@@ -9,7 +9,6 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
-    meta: {layout: 'landing'}
   },
   {
     path: '/inquiry/:accommodation',
@@ -26,11 +25,13 @@ const routes = [
     path: '/camp',
     name: 'camp',
     component: () => import('@/views/Camp.vue'),
+    meta: {title: 'Campgrounds'}
   },
   {
     path: '/grand-apartment',
     name: 'grand-apartment',
     component: () => import('@/views/GrandApartment.vue'),
+    meta: {title: 'Grand apartment'}
   },
 ];
 

@@ -1,0 +1,35 @@
+body.has-navbar-fixed-top {
+  padding-top: 144px;
+  transition: all 0.15s ease-out;
+}
+body.has-navbar-shrunk {
+  padding-top: 80px;
+}
+
+.navbar.is-transparent {
+  background: transparent;
+  .logo {
+    fill: white;
+  }
+}
+
+.navbar {
+  transition: all 0.8s ease-out;
+  .logo {
+    transition: all 0.3s ease-out;
+  }
+
+  &.is-shrunk {
+    background: white;
+    box-shadow: 0 1px 4px 1px whitesmoke;
+    .title {
+      color: #363636;
+    }
+
+    .logo {
+      height: 64px;
+      width: 64px;
+      fill: #363636;
+    }
+  }
+}

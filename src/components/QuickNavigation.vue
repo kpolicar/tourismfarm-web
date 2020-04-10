@@ -1,11 +1,12 @@
 <template>
-  <b-navbar>
+  <b-navbar :class="scrolled ? 'is-shrunk' : ''"
+            fixed-top>
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <LogoSvg class="logo" width="128px" height="128px"/>
       </b-navbar-item>
-      <b-navbar-item tag="div">
-        <h1 class="title">Grand apartment</h1>
+      <b-navbar-item tag="div" v-if="this.$route.meta.title">
+        <h1 class="title">{{ this.$route.meta.title }}</h1>
       </b-navbar-item>
     </template>
 
@@ -23,22 +24,39 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
+  import {Component, Prop, Vue} from 'vue-property-decorator';
   import LogoSvg from '@/assets/logo.svg?inline'
 
   @Component({
     components: {LogoSvg}
   })
   export default class QuickNavigation extends Vue {
-    data() {
-      return {
-        links: [
-          {name: 'home', 'title': 'Home'},
-          {name: 'camp', 'title': 'Camping'},
-          {name: 'about', 'title': 'Apartments'},
-          {name: 'about', 'title': 'Dormitories'},
-          {name: 'about', 'title': 'Activities'},
-        ]
+    @Prop({ type: Boolean })
+    blended!: boolean
+
+    scrolled = false
+
+    mounted() {
+      this.$nextTick(function(){
+        window.addEventListener("scroll", this.handleScroll);
+      })
+    }
+
+    links = [
+      {name: 'home', 'title': 'Home'},
+      {name: 'camp', 'title': 'Camping'},
+      {name: 'grand-apartment', 'title': 'Apartments'},
+      {name: 'about', 'title': 'Dormitories'},
+      {name: 'about', 'title': 'Activities'},
+    ]
+
+    handleScroll () {
+      this.scrolled = !!document.documentElement.scrollTop
+
+      if (this.scrolled) {
+        document.body.classList.add('has-navbar-shrunk');
+      } else {
+        document.body.classList.remove('has-navbar-shrunk');
       }
     }
   }

@@ -1,5 +1,9 @@
 <template>
   <fragment>
+    <section class="section is-paddingless">
+      <LandingHero></LandingHero>
+    </section>
+
     <Divider bottom="triangle"
              tag="section"
              custom-class="section"
@@ -38,9 +42,10 @@
   import Divider from "@/components/Divider.vue";
   import Apartments from "@/components/Apartments.vue";
   import Dormitories from "@/components/Dormitories.vue";
+  import LandingHero from "@/components/LandingHero.vue";
 
   @Component({
-    components: {Dormitories, Apartments, WhyUs, Testimonials, PromoHero, Divider}
+    components: {LandingHero, Dormitories, Apartments, WhyUs, Testimonials, PromoHero, Divider}
   })
   export default class Home extends Vue {
   }

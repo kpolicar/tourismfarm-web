@@ -9,7 +9,6 @@ import Echo from 'laravel-echo'
 import '@fortawesome/fontawesome-free/css/all.css'
 
 import DefaultLayout from '@/layouts/Default.vue';
-import LandingLayout from '@/layouts/Landing.vue';
 import FormLayout from "@/layouts/Form.vue";
 
 
@@ -28,7 +27,6 @@ Vue.prototype.$_ = require('underscore');
 Vue.config.productionTip = false;
 
 Vue.component('layout-default', DefaultLayout);
-Vue.component('layout-landing', LandingLayout);
 Vue.component('layout-form', FormLayout);
 
 Vue.use(Fragment.Plugin)
