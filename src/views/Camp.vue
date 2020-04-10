@@ -1,11 +1,13 @@
 <template>
   <Accommodation
+    url="camping"
     :amenities="amenities"
     :images="images">
     >
     <template v-slot:tabs>
       <b-tab-item label="Campsite details">
-        <h2 class="title">Information</h2>
+        <h2 class="title title-new">Information</h2>
+        <h3 class="subtitle">Know where you're going</h3>
         <p>The small camping ground in our orchard is perfect for those who prefer smallness,
           privacy and want to spend some time away from the big, crowded camps. Families especially
           are welcome! The camping ground does not provide much luxury, though we take great care to
@@ -20,7 +22,8 @@
       </b-tab-item>
 
       <b-tab-item label="Rules">
-        <h2 class='title'>Campsite guidelines</h2>
+        <h2 class="title title-new">Amendments</h2>
+        <h3 class="subtitle">We'll call 911 on you</h3>
         <ul>
           <li>Silence between 10:00PM and 7:00AM.</li>
           <li> Guests are kindly expected to keep the camping ground clean and tidy, the garbage
@@ -34,6 +37,14 @@
           </li>
         </ul>
       </b-tab-item>
+
+      <b-tab-item label="Reviews">
+        <h2 class="title title-new">Reviews</h2>
+        <h3 class="subtitle">What you can expect</h3>
+        <Reviews>
+
+        </Reviews>
+      </b-tab-item>
     </template>
 
     <template v-slot:pricing>
@@ -44,7 +55,7 @@
       <small class="heading" style="opacity: 0.6">tax not included</small>
       <hr>
       Tourist tax (adult) 2.00€<br>
-      Tourist tax (child) 1.00€<br><br><br>
+      Tourist tax (child) 1.00€<br><br>
 
 
       * Electricity 3.5€<br><br>
@@ -56,9 +67,10 @@
   import {Component, Vue} from 'vue-property-decorator';
   import Accommodation from "@/components/Accommodation.vue";
   import Amenities from "@/components/Amenities.vue";
+  import Reviews from "@/components/Reviews.vue";
 
   @Component({
-    components: {Amenities, Accommodation}
+    components: {Reviews, Amenities, Accommodation}
   })
   export default class Camp extends Vue {
 

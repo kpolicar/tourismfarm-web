@@ -31,7 +31,7 @@
     items!: Array<string>
 
     get features() {
-      return this.$_.pick({
+      return _.pick({
         parking: {title: 'Free parking', icon: 'parking'},
         wifi: {title: 'Wifi', icon: 'wifi'},
         kitchen: {title: 'Kitchen', icon: 'utensils'},

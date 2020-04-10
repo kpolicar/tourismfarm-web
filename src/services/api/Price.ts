@@ -10,7 +10,7 @@ export default {
   getPricing() {
     return axios.get<PriceData>('/prices')
       .then(payload => {
-        return payload.data;
+        return _.mapKeys(payload.data, (data, apartment) => _.camelCase(apartment));
       })
   }
 }

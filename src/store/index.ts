@@ -11,7 +11,12 @@ export default new Vuex.Store({
         type: 'per-person',
         base: 0,
         tax: 0
-      }
+      },
+      grandApartment: {
+        type: 'per-night',
+        base: 0,
+        tax: 0
+      },
     }
   },
   mutations: {

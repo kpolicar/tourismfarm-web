@@ -82,16 +82,16 @@
 
     active!: AccommodationConfig
     configs : { [key: string]: AccommodationConfig } = {
-      'camping': {
+      camping: {
         content: CampingInquiryContent
       },
-        'grand-apartment': {
+        grandApartment: {
         content: GrandApartmentInquiryContent
       }
     }
 
     created() {
-      this.accommodation = this.$route.params.accommodation
+      this.accommodation = _.camelCase(this.$route.params.accommodation)
       this.active = this.configs[this.accommodation]
     }
 

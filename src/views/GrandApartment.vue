@@ -1,5 +1,6 @@
 <template>
   <Accommodation
+    url="grand-apartment"
     :amenities="amenities"
     :images="images">
     <template v-slot:tabs>
