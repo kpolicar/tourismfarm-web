@@ -7,6 +7,7 @@ import Buefy from 'buefy'
 import Fragment from 'vue-fragment'
 import Echo from 'laravel-echo'
 import VueLodash from 'vue-lodash'
+import PortalVue from 'portal-vue'
 import lodash from 'lodash'
 import '@fortawesome/fontawesome-free/css/all.css'
 
@@ -36,6 +37,7 @@ Vue.use(Buefy, {
   defaultIconPack: 'fas',
   iconfont: 'fa'
 })
+Vue.use(PortalVue)
 
 new Vue({
   router,

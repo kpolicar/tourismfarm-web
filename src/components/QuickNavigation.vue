@@ -1,26 +1,29 @@
 <template>
-  <b-navbar :class="scrolled ? 'is-shrunk' : ''"
-            fixed-top>
-    <template slot="brand">
-      <b-navbar-item tag="router-link" :to="{ path: '/' }">
-        <LogoSvg class="logo" width="128px" height="128px"/>
-      </b-navbar-item>
-      <b-navbar-item tag="div" v-if="this.$route.meta.title">
-        <h1 class="title">{{ this.$route.meta.title }}</h1>
-      </b-navbar-item>
-    </template>
+  <div :class="['nav-container', scrolled ? 'has-shrunk' : '', blended ? 'is-blended' : '']">
+    <b-navbar :class="scrolled ? 'is-shrunk' : ''"
+              :transparent="blended"
+              fixed-top>
+      <template slot="brand">
+        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+          <LogoSvg class="logo" width="128px" height="128px"/>
+        </b-navbar-item>
+        <b-navbar-item tag="div" v-if="this.$route.meta.title">
+          <h1 class="title">{{ this.$route.meta.title }}</h1>
+        </b-navbar-item>
+      </template>
 
-    <template slot="end">
-      <b-navbar-item tag="div">
-        <div class="buttons">
-          <router-link :to="link" v-for="link in links" class="button is-rounded"
-                       exact-active-class="is-primary" :event="link.name!=='about' ? 'click': ''">
-            {{ link.title }}
-          </router-link>
-        </div>
-      </b-navbar-item>
-    </template>
-  </b-navbar>
+      <template slot="end">
+        <b-navbar-item tag="div">
+          <div class="buttons">
+            <router-link :to="link" v-for="link in links" class="button is-rounded"
+                         exact-active-class="is-primary" :event="link.name!=='about' ? 'click': ''">
+              {{ link.title }}
+            </router-link>
+          </div>
+        </b-navbar-item>
+      </template>
+    </b-navbar>
+  </div>
 </template>
 
 <script lang="ts">
@@ -52,12 +55,6 @@
 
     handleScroll () {
       this.scrolled = !!document.documentElement.scrollTop
-
-      if (this.scrolled) {
-        document.body.classList.add('has-navbar-shrunk');
-      } else {
-        document.body.classList.remove('has-navbar-shrunk');
-      }
     }
   }
 </script>
@@ -73,5 +70,13 @@
 
   ::v-deep .navbar-item {
     font-family: $family-secondary;
+  }
+
+  .nav-container{
+    padding-top: 146px;
+    transition: all 0.15s ease-out;
+    &.has-shrunk:not(.is-blended) {
+      padding-top: 80px;
+    }
   }
 </style>

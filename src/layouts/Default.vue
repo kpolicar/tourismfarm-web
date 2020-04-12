@@ -1,7 +1,9 @@
 <template>
   <div id="default-layout">
     <section class="section is-paddingless">
-      <QuickNavigation></QuickNavigation>
+      <portal-target name="navigation">
+        <QuickNavigation></QuickNavigation>
+      </portal-target>
     </section>
 
     <router-view></router-view>

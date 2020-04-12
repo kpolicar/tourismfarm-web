@@ -1,5 +1,9 @@
 <template>
   <fragment>
+    <portal to="navigation">
+      <QuickNavigation blended></QuickNavigation>
+    </portal>
+
     <section class="section is-paddingless">
       <LandingHero></LandingHero>
     </section>
@@ -43,9 +47,12 @@
   import Apartments from "@/components/Apartments.vue";
   import Dormitories from "@/components/Dormitories.vue";
   import LandingHero from "@/components/LandingHero.vue";
+  import QuickNavigation from "@/components/QuickNavigation.vue";
 
   @Component({
-    components: {LandingHero, Dormitories, Apartments, WhyUs, Testimonials, PromoHero, Divider}
+    components: {
+      QuickNavigation,
+      LandingHero, Dormitories, Apartments, WhyUs, Testimonials, PromoHero, Divider}
   })
   export default class Home extends Vue {
   }
