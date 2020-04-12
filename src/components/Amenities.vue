@@ -6,9 +6,10 @@
       </div>
     </div>
 
-    <b-carousel-list :data="features"
+    <CarouselListSlideshow :data="features"
                      :arrow="false"
                      :items-to-show="7"
+                     autoplay
                      v-if="render === 'carousel'">
       <template slot="item" slot-scope="props">
         <p class="has-text-centered" style="padding: 2rem">
@@ -16,14 +17,17 @@
           <span class="heading">{{ props.list.title }}</span>
         </p>
       </template>
-    </b-carousel-list>
+    </CarouselListSlideshow>
   </fragment>
 </template>
 
 <script lang="ts">
   import {Component, Prop, Vue} from 'vue-property-decorator';
+  import CarouselListSlideshow from "@/components/bulma/CarouselListSlideshow.vue";
 
-  @Component({})
+  @Component({
+    components: {CarouselListSlideshow}
+  })
   export default class Amenities extends Vue {
     @Prop({ default: 'columns' })
     render!: string
