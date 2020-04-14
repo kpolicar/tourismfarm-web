@@ -5,7 +5,7 @@
     :images="images"
     :reviews="reviews">
     <template>
-      <section class="section">
+      <section class="section" style="padding-top: 0">
         <h2 class="title title-new">Apartment details</h2>
         <h3 class="subtitle">Know where you're going</h3>
 
