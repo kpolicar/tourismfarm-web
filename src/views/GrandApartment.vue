@@ -4,27 +4,37 @@
     :amenities="amenities"
     :images="images"
     :reviews="reviews">
-    <template v-slot:tabs>
-      <b-tab-item label='Apartment details'>
-        <h2 class='title'>Information</h2>
-        <p>In a separate house, on the 1st floor, we offer you a spacious apartment with two
-          bedrooms plus a well furnished kitchen complete with an electric stove, dishwasher,
-          fridge, ... A large dining room, bathroom and separate toilette.
-        </p>
-        <p>Perfect for up to 6 persons, a crib can be supplied for small children.
-        </p>
-      </b-tab-item>
+    <template>
+      <section class="section">
+        <h2 class="title title-new">Apartment details</h2>
+        <h3 class="subtitle">Know where you're going</h3>
 
-      <b-tab-item label='Rules'>
-        <h2 class='title'>House rules</h2>
-        <ul>
-          <li>Smoking is not allowed inside the apartment.</li>
-          <li>You are free to use all the amenities in the apartment.</li>
-          <li>The Wifi is available 24/7.</li>
-          <li>Make yourself at home, and enjoy your stay!</li>
-        </ul>
+        <div class="content apartment">
+          <div v-scroll-reveal="{ duration: 1000, distance: '20%', origin: 'bottom' }">
+            <p>In a separate house, on the 1st floor, we offer you a spacious apartment with two
+              bedrooms plus a well furnished kitchen complete with an electric stove, dishwasher,
+              fridge, ... A large dining room, bathroom and separate toilette.
+            </p>
+            <p>Perfect for up to 6 persons, a crib can be supplied for small children.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      </b-tab-item>
+      <section class="section">
+        <h2 class="title title-new">Rules</h2>
+        <h3 class="subtitle">We'll call 911 on you</h3>
+
+        <div class="content rules">
+          <ol v-scroll-reveal="{ duration: 1000, distance: '20%', origin: 'bottom' }">
+            <li>Smoking is not allowed inside the apartment.</li>
+            <li>You are free to use all the amenities in the apartment.</li>
+            <li>The Wifi is available 24/7.</li>
+            <li>Make yourself at home, and enjoy your stay!</li>
+          </ol>
+        </div>
+      </section>
+
     </template>
 
     <template v-slot:pricing>
@@ -82,3 +92,31 @@
   }
 </script>
 
+<style lang="scss" scoped>
+  .apartment {
+    position: relative;
+    &:before {
+      position: absolute;
+      top: -2.5rem;
+      left: -2rem;
+      opacity: 0.1;
+      content: "\f236";
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free";
+      font-size: 80px;
+    }
+  }
+  .rules {
+    position: relative;
+    &:before {
+      position: absolute;
+      top: -2.5rem;
+      left: -2rem;
+      opacity: 0.1;
+      content: "\f46d";
+      font-weight: 900;
+      font-family: "Font Awesome 5 Free";
+      font-size: 80px;
+    }
+  }
+</style>

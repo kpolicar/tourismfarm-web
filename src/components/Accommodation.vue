@@ -19,14 +19,7 @@
       <div class="container">
         <div class="grid">
           <div style="grid-column: 1 / span 7 !important;">
-            <b-tabs size="is-medium"
-                    vertical>
-              <slot name="tabs"></slot>
-            </b-tabs>
-            <div>
-              <h2 class="title title-new">Reviews</h2>
-              <Reviews :value="reviews"></Reviews>
-            </div>
+            <slot></slot>
           </div>
           <div style="grid-column: 9 / span 4 !important;">
             <div
@@ -54,7 +47,7 @@
   import Reviews, {Review} from "@/components/Reviews.vue";
 
   @Component({
-    components: {Review, Reviews, Amenities}
+    components: {Reviews, Amenities}
   })
   export default class Accommodation extends Vue {
     @Prop({required: true})
@@ -63,8 +56,6 @@
     images!: Array<string>
     @Prop({required: true})
     url!: string
-    @Prop({required: true})
-    reviews!: Array<Review>
 
     fixedPrices = false
 
