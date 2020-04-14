@@ -1,6 +1,7 @@
 <template>
   <div>
-    <blockquote v-for="review in value">
+    <blockquote v-for="(review, index) in value"
+                v-scroll-reveal="{ duration: 1000, distance: '100%', origin: index % 2 === 0 ? 'left' : 'right' }">
       <p>{{ review.content }}</p>
       <footer>
         <cite>{{ review.author }}</cite>
