@@ -1,11 +1,11 @@
 <template>
-  <fragment>
+  <div>
     <component v-if="top"
                height="100px"
                width="100%"
                :class="['is-divider'].concat([this.transition.to ? this.transition.to : '',  this.transition.above ? 'from-'+this.transition.above : ''])"
                :is="dividers[top]"></component>
-    <component :is="tag" :class="[customClass, transition.to]">
+    <component :is="tag" :class="[customClass, transition.to]" v-bind="$attrs">
       <slot></slot>
     </component>
     <component v-if="bottom"
@@ -13,7 +13,7 @@
                width="100%"
                :class="['is-divider'].concat([this.transition.to ? this.transition.to : '',  this.transition.below ? 'from-'+this.transition.below : ''])"
                :is="dividers[bottom]"></component>
-  </fragment>
+  </div>
 </template>
 
 <script lang="ts">

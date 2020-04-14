@@ -2,7 +2,8 @@
   <Accommodation
     url="camping"
     :amenities="amenities"
-    :images="images">
+    :images="images"
+    :reviews="reviews">
     >
     <template v-slot:tabs>
       <b-tab-item label="Campsite details">
@@ -37,14 +38,6 @@
           </li>
         </ul>
       </b-tab-item>
-
-      <b-tab-item label="Reviews">
-        <h2 class="title title-new">Reviews</h2>
-        <h3 class="subtitle">What you can expect</h3>
-        <Reviews>
-
-        </Reviews>
-      </b-tab-item>
     </template>
 
     <template v-slot:pricing>
@@ -67,10 +60,9 @@
   import {Component, Vue} from 'vue-property-decorator';
   import Accommodation from "@/components/Accommodation.vue";
   import Amenities from "@/components/Amenities.vue";
-  import Reviews from "@/components/Reviews.vue";
 
   @Component({
-    components: {Reviews, Amenities, Accommodation}
+    components: {Amenities, Accommodation}
   })
   export default class Camp extends Vue {
 
@@ -82,6 +74,29 @@
       'https://turisticna-kmetija-hribar.si/images/camp/DSC06619-1920.jpg',
       'https://turisticna-kmetija-hribar.si/images/camp/DSC06624-1920.jpg',
       'https://turisticna-kmetija-hribar.si/images/camp/DSC06626-1920.jpg',
+    ]
+
+    reviews = [
+      {
+        content: '    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur, cupiditate deleniti deserunt dolore fuga laboriosam magni molestias natus nemo optio quia quis sequi soluta tempore vel veniam. Nihil, quo.',
+        author: 'John Doe',
+        date: '18/3/2019',
+      },
+      {
+        content: '    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur, cupiditate deleniti deserunt dolore fuga laboriosam magni molestias natus nemo optio quia quis sequi soluta tempore vel veniam. Nihil, quo.',
+        author: 'Peter Panda',
+        date: '1/4/2020',
+      },
+      {
+        content: '    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur, cupiditate deleniti deserunt dolore fuga laboriosam magni molestias natus nemo optio quia quis sequi soluta tempore vel veniam. Nihil, quo.',
+        author: 'Pavlin Hoe',
+        date: '31/6/2016',
+      },
+      {
+        content: '    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur, cupiditate deleniti deserunt dolore fuga laboriosam magni molestias natus nemo optio quia quis sequi soluta tempore vel veniam. Nihil, quo.',
+        author: 'Justin Hoe',
+        date: '31/6/2016',
+      },
     ]
   }
 </script>

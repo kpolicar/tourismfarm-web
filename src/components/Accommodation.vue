@@ -23,9 +23,14 @@
                     vertical>
               <slot name="tabs"></slot>
             </b-tabs>
+            <div>
+              <h2 class="title title-new">Reviews</h2>
+              <Reviews :value="reviews"></Reviews>
+            </div>
           </div>
           <div style="grid-column: 9 / span 4 !important;">
-            <div style="background: #3e394d; color: whitesmoke; border-radius: 5px; padding: 2rem 3rem 1.5rem; position: sticky;top: 80px">
+            <div
+              style="background: #3e394d; color: whitesmoke; border-radius: 5px; padding: 3rem 3rem 2rem; position: sticky;top: 80px">
               <slot name="pricing"></slot>
 
               <b-button tag="router-link"
@@ -46,29 +51,31 @@
 <script lang="ts">
   import {Component, Prop, Vue} from 'vue-property-decorator';
   import Amenities from "@/components/Amenities.vue";
-  import Reviews from "@/components/Reviews.vue";
+  import Reviews, {Review} from "@/components/Reviews.vue";
 
   @Component({
-    components: {Reviews, Amenities}
+    components: {Review, Reviews, Amenities}
   })
   export default class Accommodation extends Vue {
-    @Prop({ required: true })
+    @Prop({required: true})
     amenities!: Array<string>
-    @Prop({ required: true })
+    @Prop({required: true})
     images!: Array<string>
-    @Prop({ required: true })
+    @Prop({required: true})
     url!: string
+    @Prop({required: true})
+    reviews!: Array<Review>
 
     fixedPrices = false
 
 
     mounted() {
-      this.$nextTick(function(){
+      this.$nextTick(function () {
         window.addEventListener("scroll", this.handleScroll);
       })
     }
 
-    handleScroll () {
+    handleScroll() {
       let modifier = document.documentElement.scrollTop
       this.fixedPrices = modifier > 133
     }
@@ -89,5 +96,6 @@
 
   ::v-deep .carousel-list.has-shadow {
     box-shadow: none;
+
   }
 </style>

@@ -2,7 +2,8 @@
   <Accommodation
     url="grand-apartment"
     :amenities="amenities"
-    :images="images">
+    :images="images"
+    :reviews="reviews">
     <template v-slot:tabs>
       <b-tab-item label='Apartment details'>
         <h2 class='title'>Information</h2>
@@ -60,6 +61,23 @@
       'http://turisticna-kmetija-hribar.si/images/grand-apartment/TK11-1920.jpg',
       'http://turisticna-kmetija-hribar.si/images/grand-apartment/DSC00436-1920.jpg',
       'http://turisticna-kmetija-hribar.si/images/grand-apartment/DSC01623-1920.jpg',
+    ]
+    reviews = [
+      {
+        content: '    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur, cupiditate deleniti deserunt dolore fuga laboriosam magni molestias natus nemo optio quia quis sequi soluta tempore vel veniam. Nihil, quo.',
+        author: 'John Doe',
+        date: '18/3/2019',
+      },
+      {
+        content: '    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur, cupiditate deleniti deserunt dolore fuga laboriosam magni molestias natus nemo optio quia quis sequi soluta tempore vel veniam. Nihil, quo.',
+        author: 'Peter Panda',
+        date: '1/4/2020',
+      },
+      {
+        content: '    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur, cupiditate deleniti deserunt dolore fuga laboriosam magni molestias natus nemo optio quia quis sequi soluta tempore vel veniam. Nihil, quo.',
+        author: 'Pavlin Hoe',
+        date: '31/6/2016',
+      },
     ]
   }
 </script>
