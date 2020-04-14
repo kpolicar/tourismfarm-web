@@ -5,6 +5,7 @@ import router from './router';
 import store from './store'
 import Buefy from 'buefy'
 import Fragment from 'vue-fragment'
+import VueScrollReveal from 'vue-scroll-reveal';
 import Echo from 'laravel-echo'
 import VueLodash from 'vue-lodash'
 import PortalVue from 'portal-vue'
@@ -47,6 +48,7 @@ Vue.use(Buefy, {
   iconfont: 'fa'
 })
 Vue.use(PortalVue)
+Vue.use(VueScrollReveal)
 
 new Vue({
   router,
