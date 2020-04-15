@@ -97,6 +97,10 @@ export default class Inquiry extends Vue {
       },
     ]
 
+    created() {
+      this.formData['accommodation'] = this.$route.params.accommodation
+    }
+
     aggregate(data: object) {
       Object.assign(this.formData, data);
     }

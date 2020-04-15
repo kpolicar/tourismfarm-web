@@ -1,6 +1,6 @@
 <template>
   <Accommodation
-    :url="{ name: 'camp' }"
+    url="camping"
     :amenities="amenities"
     :images="images"
     :pricing="$store.state.pricing.camping">
