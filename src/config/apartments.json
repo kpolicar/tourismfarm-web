@@ -4,8 +4,17 @@
     "min": 4,
     "max": 6,
     "price": 80,
+    "url": "grand-apartment",
+    "amenities": ["parking", "wifi", "kitchen", "washer", "shower", "refrigerator"],
     "image": "https://turisticna-kmetija-hribar.si/images/grand-apartment/DSC06638-480.jpg",
-    "url": "grand-apartment"
+    "images": [
+      "https://turisticna-kmetija-hribar.si/images/camp/DSC00770-1920.jpg",
+      "https://turisticna-kmetija-hribar.si/images/camp/DSC06618-1920.jpg",
+      "https://turisticna-kmetija-hribar.si/images/camp/DSC00367-1920.jpg",
+      "https://turisticna-kmetija-hribar.si/images/camp/DSC06619-1920.jpg",
+      "https://turisticna-kmetija-hribar.si/images/camp/DSC06624-1920.jpg",
+      "https://turisticna-kmetija-hribar.si/images/camp/DSC06626-1920.jpg"
+    ]
   },
   {
     "title": "Large apartment",

@@ -14,6 +14,11 @@ body {
   color: #2c3e50;
 }
 
+.content blockquote {
+  background-color: unset;
+  border-left: unset;
+}
+
 .title-new {
   color: gray;
   text-transform: uppercase;

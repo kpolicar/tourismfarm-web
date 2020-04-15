@@ -19,12 +19,28 @@
       <div class="container">
         <div class="grid">
           <div style="grid-column: 1 / span 7 !important;">
+
+
             <slot></slot>
+
           </div>
           <div style="grid-column: 9 / span 4 !important;">
-            <div
+            <div class="content"
               style="background: #3e394d; color: whitesmoke; border-radius: 5px; padding: 3rem 3rem 2rem; position: sticky;top: 80px">
-              <slot name="pricing"></slot>
+
+
+              <p class="heading is-marginless">Priced at</p>
+              <p class="title" style="color: whitesmoke; margin-bottom: 0">
+                <strong>€{{ pricing.base }}</strong>
+                <small style="opacity: 0.6; font-size: 16px"> / <template v-if="pricing.type==='per-night'">night</template><template v-else>person</template>
+                </small>
+              </p>
+              <small class="heading" style="opacity: 0.6">tax not included</small>
+              <hr>
+              <p class="is-marginless">Tourist tax (adult) {{ pricing.base }}€</p>
+              <p>Tourist tax (child) {{ pricing.base }}€</p>
+
+              <slot name="pricing" v-bind="pricing"></slot>
 
               <b-button tag="router-link"
                         :to="{name: 'inquiry', params: {accommodation: url}}"
@@ -45,9 +61,11 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Amenities from '@/components/Amenities.vue';
 import Reviews, { Review } from '@/components/Reviews.vue';
+import ContentCard from '@/components/ContentCard.vue';
+import { PriceData } from '@/services/api/Price';
 
   @Component({
-    components: { Reviews, Amenities },
+    components: { ContentCard, Reviews, Amenities },
   })
 export default class Accommodation extends Vue {
     @Prop({ required: true })
@@ -59,19 +77,8 @@ export default class Accommodation extends Vue {
     @Prop({ required: true })
     url!: string
 
-    fixedPrices = false
-
-
-    mounted() {
-      this.$nextTick(function () {
-        window.addEventListener('scroll', this.handleScroll);
-      });
-    }
-
-    handleScroll() {
-      const modifier = document.documentElement.scrollTop;
-      this.fixedPrices = modifier > 133;
-    }
+    @Prop({ required: true })
+    pricing!: PriceData
 }
 </script>
 

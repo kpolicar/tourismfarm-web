@@ -1,3 +1,14 @@
 {
-  "message": "hello i18n !!"
+  "details": {
+    "title": "Details",
+    "subtitle": "Know where you're going"
+  },
+  "rules": {
+    "title": "Rules",
+    "subtitle": "We'll call 911 on you"
+  },
+  "reviews": {
+    "title": "Reviews",
+    "subtitle": "What people think of us"
+  }
 }

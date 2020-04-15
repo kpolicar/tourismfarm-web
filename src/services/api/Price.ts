@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 
-interface PriceData {
+export interface PriceData {
   type: string;
   base: number;
   tax: number;
