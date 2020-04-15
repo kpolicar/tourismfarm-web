@@ -32,48 +32,50 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import Api, {Inquiry} from "@/services/api/Inquiry";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import Api, { Inquiry } from '@/services/api/Inquiry';
 
   interface VerificationEvent {
-    inquiry: Inquiry
+    inquiry: Inquiry;
   }
 
   @Component({})
-  export default class VerificationForm extends Vue {
-    @Prop({required: true})
+export default class VerificationForm extends Vue {
+    @Prop({ required: true })
     formData!: object
 
     record!: Inquiry
+
     requesting = false;
+
     verifying = false;
 
 
     beginVerification() {
-      this.requesting = true
+      this.requesting = true;
 
       Api.postInquiry(this.formData)
         .then(this.onBegunVerification)
-        .then(() => this.requesting = false)
+        .then(() => this.requesting = false);
     }
 
     onBegunVerification(record: Inquiry) {
-      this.verifying = true
+      this.verifying = true;
       this.$emit('input', this.record = record);
 
-      this.$echo.channel(`inquiry.`+record.id)
+      this.$echo.channel(`inquiry.${record.id}`)
         .listen('Verified', (verified: VerificationEvent) => {
-          this.verifying = false
+          this.verifying = false;
           this.$emit('input', verified.inquiry);
-          this.$emit('passes', true)
+          this.$emit('passes', true);
         });
     }
 
     resendVerification() {
-      this.requesting = true
+      this.requesting = true;
 
       Api.resendVerification(this.record.id)
         .then(() => this.requesting = false);
     }
-  }
+}
 </script>

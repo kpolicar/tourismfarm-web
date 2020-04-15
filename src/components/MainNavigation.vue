@@ -20,25 +20,25 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import LogoSvg from '@/assets/logo.svg?inline'
+import { Component, Vue } from 'vue-property-decorator';
+import LogoSvg from '@/assets/logo.svg?inline';
 
   @Component({
-    components: {LogoSvg}
+    components: { LogoSvg },
   })
-  export default class QuickNavigation extends Vue {
-    data() {
-      return {
-        links: [
-          {name: 'home', 'title': 'Home'},
-          {name: 'about', 'title': 'About'},
-          {name: 'about', 'title': 'Ameneties'},
-          {name: 'about', 'title': 'Rates'},
-          {name: 'about', 'title': 'Activities'},
-        ]
-      }
-    }
+export default class QuickNavigation extends Vue {
+  data() {
+    return {
+      links: [
+        { name: 'home', title: 'Home' },
+        { name: 'about', title: 'About' },
+        { name: 'about', title: 'Ameneties' },
+        { name: 'about', title: 'Rates' },
+        { name: 'about', title: 'Activities' },
+      ],
+    };
   }
+}
 </script>
 
 <style lang="scss" scoped>

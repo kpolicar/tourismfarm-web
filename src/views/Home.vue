@@ -41,20 +41,20 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import Testimonials from '@/components/Testimonials.vue';
-  import WhyUs from "@/components/WhyUs.vue";
-  import PromoHero from "@/components/PromoHero.vue";
-  import Divider from "@/components/Divider.vue";
-  import LandingHero from "@/components/LandingHero.vue";
-  import QuickNavigation from "@/components/QuickNavigation.vue";
-  import AccommodationCards from "@/components/AccommodationCards.vue";
+import { Component, Vue } from 'vue-property-decorator';
+import Testimonials from '@/components/Testimonials.vue';
+import WhyUs from '@/components/WhyUs.vue';
+import PromoHero from '@/components/PromoHero.vue';
+import Divider from '@/components/Divider.vue';
+import LandingHero from '@/components/LandingHero.vue';
+import QuickNavigation from '@/components/QuickNavigation.vue';
+import AccommodationCards from '@/components/AccommodationCards.vue';
 
   @Component({
     components: {
-      AccommodationCards, QuickNavigation, LandingHero, WhyUs, Testimonials, PromoHero, Divider
-    }
+      AccommodationCards, QuickNavigation, LandingHero, WhyUs, Testimonials, PromoHero, Divider,
+    },
   })
-  export default class Home extends Vue {
-  }
+export default class Home extends Vue {
+}
 </script>

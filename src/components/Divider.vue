@@ -17,35 +17,39 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import RoundSvg from '@/assets/dividers/round.svg?inline';
-  import TriangleSvg from '@/assets/dividers/triangle.svg?inline';
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import RoundSvg from '@/assets/dividers/round.svg?inline';
+import TriangleSvg from '@/assets/dividers/triangle.svg?inline';
 
   interface Transition {
-    to: string
-    above: string
-    below: string
+    to: string;
+    above: string;
+    below: string;
   }
 
   @Component({
-    components: {RoundSvg, TriangleSvg}
+    components: { RoundSvg, TriangleSvg },
   })
-  export default class Divider extends Vue {
-    @Prop({type: [Boolean, String]})
+export default class Divider extends Vue {
+    @Prop({ type: [Boolean, String] })
     top!: boolean | string
-    @Prop({type: [Boolean, String]})
+
+    @Prop({ type: [Boolean, String] })
     bottom!: boolean | string
-    @Prop({default: {to: '', above: '', below: ''}})
+
+    @Prop({ default: { to: '', above: '', below: '' } })
     transition!: Transition
-    @Prop({default: 'div'})
+
+    @Prop({ default: 'div' })
     tag!: string
+
     @Prop()
     customClass!: string
 
     dividers = {
       true: RoundSvg,
-      'round': RoundSvg,
-      'triangle': TriangleSvg,
+      round: RoundSvg,
+      triangle: TriangleSvg,
     }
-  }
+}
 </script>

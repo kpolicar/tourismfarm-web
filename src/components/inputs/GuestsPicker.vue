@@ -32,32 +32,34 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
   @Component({})
-  export default class GuestsPicker extends Vue {
+export default class GuestsPicker extends Vue {
     @Prop({ required: true })
     name!: string
 
     @Prop({
       default: {
         adults: 1, children: 0, infants: 0,
-      }
+      },
     })
-    value!: { [key: string]: number; }
+    value!: { [key: string]: number }
 
     adults = 1
+
     children = 0
+
     infants = 0
 
-    created () {
-      this.adults = this.value.adults
-      this.children = this.value.children
-      this.infants = this.value.infants
+    created() {
+      this.adults = this.value.adults;
+      this.children = this.value.children;
+      this.infants = this.value.infants;
     }
 
     get title() {
-      return (+this.adults + +this.children) + ' guests, ' + this.infants + ' infants';
+      return `${+this.adults + +this.children} guests, ${this.infants} infants`;
     }
 
     get computedAdults() {
@@ -74,26 +76,29 @@
 
     set computedAdults(value) {
       this.$emit('input', {
-        ...this.value, ...{
+        ...this.value,
+        ...{
           adults: this.adults = value,
-        }
-      })
+        },
+      });
     }
 
     set computedChildren(value) {
       this.$emit('input', {
-        ...this.value, ...{
+        ...this.value,
+        ...{
           children: this.children = value,
-        }
-      })
+        },
+      });
     }
 
     set computedInfants(value) {
       this.$emit('input', {
-        ...this.value, ...{
+        ...this.value,
+        ...{
           infants: this.infants = value,
-        }
-      })
+        },
+      });
     }
-  }
+}
 </script>

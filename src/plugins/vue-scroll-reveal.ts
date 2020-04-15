@@ -1,5 +1,4 @@
 declare module 'vue-scroll-reveal' {
-  var main: any
+  var main: any;
   export = main
 }
-

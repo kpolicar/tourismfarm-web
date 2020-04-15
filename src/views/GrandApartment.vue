@@ -51,17 +51,16 @@
 </template>
 
 <script lang='ts'>
-  import {Component, Vue} from 'vue-property-decorator';
-  import Accommodation from '@/components/Accommodation.vue';
-  import Amenities from '@/components/Amenities.vue';
+import { Component, Vue } from 'vue-property-decorator';
+import Accommodation from '@/components/Accommodation.vue';
+import Amenities from '@/components/Amenities.vue';
 
   @Component({
-    components: {Amenities, Accommodation}
+    components: { Amenities, Accommodation },
   })
-  export default class GrandApartment extends Vue {
-
-
+export default class GrandApartment extends Vue {
     amenities = ['parking', 'wifi', 'kitchen', 'washer', 'shower', 'noSmoking', 'coffee', 'oven', 'dishwasher', 'refrigerator', 'freezer']
+
     images = [
       'http://turisticna-kmetija-hribar.si/images/grand-apartment/DSC06638-1920.jpg',
       'http://turisticna-kmetija-hribar.si/images/grand-apartment/DSC01599-1920.jpg',
@@ -72,6 +71,7 @@
       'http://turisticna-kmetija-hribar.si/images/grand-apartment/DSC00436-1920.jpg',
       'http://turisticna-kmetija-hribar.si/images/grand-apartment/DSC01623-1920.jpg',
     ]
+
     reviews = [
       {
         content: '    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur, cupiditate deleniti deserunt dolore fuga laboriosam magni molestias natus nemo optio quia quis sequi soluta tempore vel veniam. Nihil, quo.',
@@ -89,7 +89,7 @@
         date: '31/6/2016',
       },
     ]
-  }
+}
 </script>
 
 <style lang="scss" scoped>

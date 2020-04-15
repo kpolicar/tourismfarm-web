@@ -30,21 +30,20 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
   interface AccommodationData {
-    title: string,
-    price: number,
-    min: number,
-    max: number,
-    image: string,
-    url: string,
+    title: string;
+    price: number;
+    min: number;
+    max: number;
+    image: string;
+    url: string;
   }
 
   @Component({})
-  export default class Features extends Vue {
-
-    @Prop({required: true})
+export default class Features extends Vue {
+    @Prop({ required: true })
     value!: Array<AccommodationData>
-  }
+}
 </script>

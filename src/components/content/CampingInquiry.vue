@@ -26,12 +26,12 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import Amenities from "@/components/Amenities.vue";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import Amenities from '@/components/Amenities.vue';
 
   @Component({
-    components: {Amenities}
+    components: { Amenities },
   })
-  export default class CampingInquiryContent extends Vue {
-  }
+export default class CampingInquiryContent extends Vue {
+}
 </script>

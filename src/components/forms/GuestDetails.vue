@@ -34,20 +34,19 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue, Watch} from 'vue-property-decorator';
-  import GuestsPicker from "@/components/inputs/GuestsPicker.vue";
+import { Component, Vue, Watch } from 'vue-property-decorator';
+import GuestsPicker from '@/components/inputs/GuestsPicker.vue';
 
-  export interface DataModel {
-    name: string,
-    email: string,
-    message: string
+export interface DataModel {
+    name: string;
+    email: string;
+    message: string;
   }
 
   @Component({
-    components: {GuestsPicker}
+    components: { GuestsPicker },
   })
-  export default class GuestDetailsForm extends Vue {
-
+export default class GuestDetailsForm extends Vue {
     value: DataModel = {
       name: '',
       email: '',
@@ -56,21 +55,21 @@
 
 
     get passes() {
-      let {name, email, message} = this.value;
+      const { name, email, message } = this.value;
 
-      return name.length >= 5 && name.length <= 100 &&
-             email.length >= 5 && email.length <= 100 && email.match('@.+') &&
-             message.length <= 300;
+      return name.length >= 5 && name.length <= 100
+             && email.length >= 5 && email.length <= 100 && email.match('@.+')
+             && message.length <= 300;
     }
 
     @Watch('value', { deep: true })
     valueChanged(value: DataModel) {
-      this.$emit('input', value)
+      this.$emit('input', value);
     }
 
     @Watch('passes')
     validatedChanged(passes: boolean) {
-      this.$emit('passes', passes)
+      this.$emit('passes', passes);
     }
-  }
+}
 </script>

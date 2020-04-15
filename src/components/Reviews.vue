@@ -12,20 +12,19 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
-  export interface Review {
-    content: string
-    author: string
-    date: string
+export interface Review {
+    content: string;
+    author: string;
+    date: string;
   }
 
   @Component({})
-  export default class Reviews extends Vue {
-    @Prop({required: true})
+export default class Reviews extends Vue {
+    @Prop({ required: true })
     value!: Array<Review>
-
-  }
+}
 </script>
 
 <style lang="scss" scoped>

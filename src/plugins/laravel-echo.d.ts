@@ -1,5 +1,5 @@
 export {};
 
 declare global {
-  interface Window { Pusher: any; }
+  interface Window { Pusher: any }
 }

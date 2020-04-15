@@ -22,35 +22,36 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import CarouselListSlideshow from "@/components/bulma/CarouselListSlideshow.vue";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import CarouselListSlideshow from '@/components/bulma/CarouselListSlideshow.vue';
 
   @Component({
-    components: {CarouselListSlideshow}
+    components: { CarouselListSlideshow },
   })
-  export default class Amenities extends Vue {
+export default class Amenities extends Vue {
     @Prop({ default: 'columns' })
     render!: string
+
     @Prop()
     items!: Array<string>
 
     get features() {
       return Object.values(this._.pick({
-        parking: {title: 'Free parking', icon: 'parking'},
-        wifi: {title: 'Wifi', icon: 'wifi'},
-        kitchen: {title: 'Kitchen', icon: 'utensils'},
-        washer: {title: 'Washer', icon: 'tshirt'},
-        shower: {title: 'Shower', icon: 'shower'},
-        noSmoking: {title: 'No smoking', icon: 'smoking-ban'},
-        coffee: {title: 'Coffee maker', icon: 'coffee'},
-        oven: {title: 'Oven', icon: 'fire'},
-        dishwasher: {title: 'Dishwasher', icon: 'soap'},
-        refrigerator: {title: 'Refrigerator', icon: 'fan'},
-        freezer: {title: 'Freezer', icon: 'temperature-low'},
+        parking: { title: 'Free parking', icon: 'parking' },
+        wifi: { title: 'Wifi', icon: 'wifi' },
+        kitchen: { title: 'Kitchen', icon: 'utensils' },
+        washer: { title: 'Washer', icon: 'tshirt' },
+        shower: { title: 'Shower', icon: 'shower' },
+        noSmoking: { title: 'No smoking', icon: 'smoking-ban' },
+        coffee: { title: 'Coffee maker', icon: 'coffee' },
+        oven: { title: 'Oven', icon: 'fire' },
+        dishwasher: { title: 'Dishwasher', icon: 'soap' },
+        refrigerator: { title: 'Refrigerator', icon: 'fan' },
+        freezer: { title: 'Freezer', icon: 'temperature-low' },
 
       }, this.items));
     }
-  }
+}
 </script>
 
 <style lang="scss" scoped>

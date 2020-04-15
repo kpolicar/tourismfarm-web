@@ -14,7 +14,7 @@ const routes = [
     path: '/inquiry/:accommodation',
     name: 'inquiry',
     component: () => import('@/views/Inquiry.vue'),
-    meta: {layout: 'form'}
+    meta: { layout: 'form' },
   },
   {
     path: '/about',
@@ -25,13 +25,13 @@ const routes = [
     path: '/camp',
     name: 'camp',
     component: () => import('@/views/Camp.vue'),
-    meta: {title: 'Campgrounds'}
+    meta: { title: 'Campgrounds' },
   },
   {
     path: '/grand-apartment',
     name: 'grand-apartment',
     component: () => import('@/views/GrandApartment.vue'),
-    meta: {title: 'Grand apartment'}
+    meta: { title: 'Grand apartment' },
   },
 ];
 
@@ -39,13 +39,12 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
-    } else {
-      return { x: 0, y: 0 }
+      return savedPosition;
     }
-  }
+    return { x: 0, y: 0 };
+  },
 });
 
 export default router;

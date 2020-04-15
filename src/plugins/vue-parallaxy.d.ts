@@ -1,5 +1,4 @@
 declare module 'vue-parallaxy' {
-  var main: any
+  var main: any;
   export = main
 }
-

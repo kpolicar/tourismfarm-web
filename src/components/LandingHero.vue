@@ -26,26 +26,26 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import QuickNavigation from '@/components/QuickNavigation.vue';
-  import ChooseBookingModal from '@/components/modals/ChooseBooking.vue';
-  import Parallax from 'vue-parallaxy';
+import { Component, Vue } from 'vue-property-decorator';
+import QuickNavigation from '@/components/QuickNavigation.vue';
+import ChooseBookingModal from '@/components/modals/ChooseBooking.vue';
+import Parallax from 'vue-parallaxy';
 
   @Component({
-    components: {QuickNavigation, Parallax},
+    components: { QuickNavigation, Parallax },
   })
-  export default class LandingHero extends Vue {
-    cardModal() {
-      this.$buefy.modal.open({
-        parent: this,
-        component: ChooseBookingModal,
-        hasModalCard: true,
-        trapFocus: true,
-        fullScreen: true,
-        animation: 'slide'
-      });
-    }
+export default class LandingHero extends Vue {
+  cardModal() {
+    this.$buefy.modal.open({
+      parent: this,
+      component: ChooseBookingModal,
+      hasModalCard: true,
+      trapFocus: true,
+      fullScreen: true,
+      animation: 'slide',
+    });
   }
+}
 </script>
 
 <style lang="scss" scoped>

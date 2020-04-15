@@ -70,17 +70,17 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import Accommodation from "@/components/Accommodation.vue";
-  import Amenities from "@/components/Amenities.vue";
-  import Reviews from "@/components/Reviews.vue";
+import { Component, Vue } from 'vue-property-decorator';
+import Accommodation from '@/components/Accommodation.vue';
+import Amenities from '@/components/Amenities.vue';
+import Reviews from '@/components/Reviews.vue';
 
   @Component({
-    components: {Reviews, Amenities, Accommodation}
+    components: { Reviews, Amenities, Accommodation },
   })
-  export default class Camp extends Vue {
-
+export default class Camp extends Vue {
     amenities = ['parking', 'wifi', 'kitchen', 'washer', 'shower', 'refrigerator']
+
     images = [
       'https://turisticna-kmetija-hribar.si/images/camp/DSC00770-1920.jpg',
       'https://turisticna-kmetija-hribar.si/images/camp/DSC06618-1920.jpg',
@@ -112,7 +112,7 @@
         date: '31/6/2016',
       },
     ]
-  }
+}
 </script>
 
 

@@ -51,78 +51,81 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
-  import GuestsPicker from "@/components/inputs/GuestsPicker.vue";
-  import CampingInquiryContent from "@/components/content/CampingInquiry.vue";
-  import GrandApartmentInquiryContent from "@/components/content/GrandApartmentInquiry.vue";
+import {
+  Component, Prop, Vue, Watch,
+} from 'vue-property-decorator';
+import GuestsPicker from '@/components/inputs/GuestsPicker.vue';
+import CampingInquiryContent from '@/components/content/CampingInquiry.vue';
+import GrandApartmentInquiryContent from '@/components/content/GrandApartmentInquiry.vue';
 
-  export interface DataModel {
-    dates: Array<Date>,
+export interface DataModel {
+    dates: Array<Date>;
     guests: {
-      adults: number,
-      children: number,
-      infants: number
-    }
+      adults: number;
+      children: number;
+      infants: number;
+    };
   }
 
   interface AccommodationConfig {
-    content: typeof Vue
+    content: typeof Vue;
   }
 
   @Component({
-    components: {GuestsPicker, CampingInquiryContent}
+    components: { GuestsPicker, CampingInquiryContent },
   })
-  export default class ReservationDetailsForm extends Vue {
+export default class ReservationDetailsForm extends Vue {
     value: DataModel = {
       dates: [],
-      guests: { adults: 1, children: 0, infants: 0 }
+      guests: { adults: 1, children: 0, infants: 0 },
     }
 
     accommodation!: string
 
     active!: AccommodationConfig
-    configs : { [key: string]: AccommodationConfig } = {
+
+    configs: { [key: string]: AccommodationConfig } = {
       camping: {
-        content: CampingInquiryContent
+        content: CampingInquiryContent,
       },
       grandApartment: {
-        content: GrandApartmentInquiryContent
-      }
+        content: GrandApartmentInquiryContent,
+      },
     }
 
     created() {
-      this.accommodation = this._.camelCase(this.$route.params.accommodation)
-      this.active = this.configs[this.accommodation]
+      this.accommodation = this._.camelCase(this.$route.params.accommodation);
+      this.active = this.configs[this.accommodation];
     }
 
     get passes() {
-      return this.value.dates.length == 2 &&
-             this.value.guests.adults > 0;
+      return this.value.dates.length == 2
+             && this.value.guests.adults > 0;
     }
 
     get duration() {
-      let dateDiff = Math.abs(this.value.dates[0].getTime() - this.value.dates[1].getTime())
+      const dateDiff = Math.abs(this.value.dates[0].getTime() - this.value.dates[1].getTime());
 
       return dateDiff / (1000 * 60 * 60 * 24) + 1;
     }
 
     get modifier() {
       if (this.pricing.type == 'per-night') {
-        return this.duration
+        return this.duration;
       }
-      return this.duration * (this.value.guests.adults + this.value.guests.children)
+      return this.duration * (this.value.guests.adults + this.value.guests.children);
     }
 
     get price() {
-      return this.pricing.base * this.modifier
+      return this.pricing.base * this.modifier;
     }
 
     get tax() {
-      return this.pricing.tax * this.modifier
+      return this.pricing.tax * this.modifier;
     }
 
     get total() {
-      return this.price + this.tax
+      return this.price + this.tax;
     }
 
     get pricing() {
@@ -131,14 +134,14 @@
 
     @Watch('value', { deep: true })
     valueChanged(value: DataModel) {
-      this.$emit('input', value)
+      this.$emit('input', value);
     }
 
     @Watch('passes')
     validatedChanged(passes: boolean) {
-      this.$emit('passes', passes)
+      this.$emit('passes', passes);
     }
-  }
+}
 </script>
 
 <style lang="scss" scoped>

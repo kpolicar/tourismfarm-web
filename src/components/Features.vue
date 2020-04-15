@@ -8,22 +8,22 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
   @Component({})
-  export default class Features extends Vue {
-    data() {
-      return {
-        features: [
-          {title: 'peaceful', icon: 'dove'},
-          {title: 'location', icon: 'compass'},
-          {title: 'flexible', icon: 'language'},
-          {title: 'assistance', icon: 'comment'},
-          {title: 'price', icon: 'money-bill-wave'},
-        ],
-      };
-    }
+export default class Features extends Vue {
+  data() {
+    return {
+      features: [
+        { title: 'peaceful', icon: 'dove' },
+        { title: 'location', icon: 'compass' },
+        { title: 'flexible', icon: 'language' },
+        { title: 'assistance', icon: 'comment' },
+        { title: 'price', icon: 'money-bill-wave' },
+      ],
+    };
   }
+}
 </script>
 
 <style lang="scss" scoped>

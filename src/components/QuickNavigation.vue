@@ -27,36 +27,36 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import LogoSvg from '@/assets/logo.svg?inline'
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import LogoSvg from '@/assets/logo.svg?inline';
 
   @Component({
-    components: {LogoSvg}
+    components: { LogoSvg },
   })
-  export default class QuickNavigation extends Vue {
+export default class QuickNavigation extends Vue {
     @Prop({ type: Boolean })
     blended!: boolean
 
     scrolled = false
 
     mounted() {
-      this.$nextTick(function(){
-        window.addEventListener("scroll", this.handleScroll);
-      })
+      this.$nextTick(function () {
+        window.addEventListener('scroll', this.handleScroll);
+      });
     }
 
     links = [
-      {name: 'home', 'title': 'Home'},
-      {name: 'camp', 'title': 'Camping'},
-      {name: 'grand-apartment', 'title': 'Apartments'},
-      {name: 'about', 'title': 'Dormitories'},
-      {name: 'about', 'title': 'Activities'},
+      { name: 'home', title: 'Home' },
+      { name: 'camp', title: 'Camping' },
+      { name: 'grand-apartment', title: 'Apartments' },
+      { name: 'about', title: 'Dormitories' },
+      { name: 'about', title: 'Activities' },
     ]
 
-    handleScroll () {
-      this.scrolled = !!document.documentElement.scrollTop
+    handleScroll() {
+      this.scrolled = !!document.documentElement.scrollTop;
     }
-  }
+}
 </script>
 
 <style lang="scss" scoped>

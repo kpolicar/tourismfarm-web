@@ -5,19 +5,20 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
-  const default_layout = 'default';
+const default_layout = 'default';
 
   @Component({})
-  export default class App extends Vue {
-    mounted() {
-      this.$store.dispatch('updatePricing');
-    }
-    get layout(): string {
-      return 'layout-' + (this.$route.meta.layout || default_layout);
-    }
+export default class App extends Vue {
+  mounted() {
+    this.$store.dispatch('updatePricing');
   }
+
+  get layout(): string {
+    return `layout-${this.$route.meta.layout || default_layout}`;
+  }
+}
 </script>
 
 <style lang="scss">

@@ -20,14 +20,14 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import Features from '@/components/Features.vue';
+import { Component, Vue } from 'vue-property-decorator';
+import Features from '@/components/Features.vue';
 
   @Component({
-    components: {Features}
+    components: { Features },
   })
-  export default class WhyUs extends Vue {
-  }
+export default class WhyUs extends Vue {
+}
 </script>
 
 <style lang="scss" scoped>

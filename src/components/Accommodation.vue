@@ -42,19 +42,21 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import Amenities from "@/components/Amenities.vue";
-  import Reviews, {Review} from "@/components/Reviews.vue";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import Amenities from '@/components/Amenities.vue';
+import Reviews, { Review } from '@/components/Reviews.vue';
 
   @Component({
-    components: {Reviews, Amenities}
+    components: { Reviews, Amenities },
   })
-  export default class Accommodation extends Vue {
-    @Prop({required: true})
+export default class Accommodation extends Vue {
+    @Prop({ required: true })
     amenities!: Array<string>
-    @Prop({required: true})
+
+    @Prop({ required: true })
     images!: Array<string>
-    @Prop({required: true})
+
+    @Prop({ required: true })
     url!: string
 
     fixedPrices = false
@@ -62,15 +64,15 @@
 
     mounted() {
       this.$nextTick(function () {
-        window.addEventListener("scroll", this.handleScroll);
-      })
+        window.addEventListener('scroll', this.handleScroll);
+      });
     }
 
     handleScroll() {
-      let modifier = document.documentElement.scrollTop
-      this.fixedPrices = modifier > 133
+      const modifier = document.documentElement.scrollTop;
+      this.fixedPrices = modifier > 133;
     }
-  }
+}
 </script>
 
 <style lang="scss" scoped>
