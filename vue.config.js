@@ -1,5 +1,6 @@
 module.exports = {
   lintOnSave: false,
+
   chainWebpack: (config) => {
     const svgRule = config.module.rule('svg');
 
@@ -15,8 +16,8 @@ module.exports = {
       .loader('vue-svg-loader')
       .options({
         svgo: {
-          plugins: [{ removeDimensions: true }, { removeViewBox: false }]
-        }
+          plugins: [{ removeDimensions: true }, { removeViewBox: false }],
+        },
       })
       .end()
       .end()
@@ -24,16 +25,26 @@ module.exports = {
       .use('file-loader')
       .loader('file-loader')
       .options({
-        name: 'assets/[name].[hash:8].[ext]'
+        name: 'assets/[name].[hash:8].[ext]',
       });
   },
+
   css: {
     loaderOptions: {
       sass: {
         prependData: `
           @import "@/css/global.scss";
-        `
-      }
-    }
-  }
+        `,
+      },
+    },
+  },
+
+  pluginOptions: {
+    i18n: {
+      locale: 'en',
+      fallbackLocale: 'en',
+      localeDir: 'locales',
+      enableInSFC: true,
+    },
+  },
 };
