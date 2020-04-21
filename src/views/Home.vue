@@ -4,7 +4,7 @@
       <QuickNavigation blended></QuickNavigation>
     </portal>
 
-    <section class="section is-paddingless">
+    <section class="section is-paddingless" style="margin-top: -146px">
       <LandingHero></LandingHero>
     </section>
 

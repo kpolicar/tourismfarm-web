@@ -2,9 +2,9 @@
   <div class="hero is-fullheight video">
     <div class="hero-video">
       <Parallax>
-      <video playsinline autoplay muted loop poster="@/assets/hero.jpg">
-        <source src="" type="video/mp4"/>
-      </video>
+        <video playsinline autoplay muted loop poster="@/assets/hero.jpg">
+          <source src="" type="video/mp4"/>
+        </video>
       </Parallax>
     </div>
 
@@ -16,10 +16,6 @@
         <h2 class="subtitle">
           A family farm
         </h2>
-        <button class="button is-primary is-medium is-rounded"
-                @click="cardModal()">
-          Book now
-        </button>
       </div>
     </div>
   </div>
