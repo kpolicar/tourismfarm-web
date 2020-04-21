@@ -1,8 +1,9 @@
 <script lang="ts">
+// @ts-nocheck
+
 import {
   Component, Prop, Vue, Watch,
 } from 'vue-property-decorator';
-// @ts-ignore
 import config from 'buefy/src/utils/config.js';
 import CarouselList from 'buefy/src/components/carousel/CarouselList.vue';
 
@@ -21,7 +22,7 @@ export default class CarouselListSlideshow extends Vue {
 
     isPause = false
 
-    timer: number|null = null
+    timer: NodeJS.Timer|null = null
 
     reversed = false
 
@@ -40,15 +41,12 @@ export default class CarouselListSlideshow extends Vue {
         if (!this.repeat) {
           this.pauseTimer();
         } else {
-          // @ts-ignore
           const tooFar = this.activeItem > this.total - this.itemsToShow;
-          // @ts-ignore
           const atStart = this.activeItem === 0;
           if (tooFar || atStart) {
             this.reversed = tooFar || !atStart;
           }
 
-          // @ts-ignore
           this.reversed ? this.prev() : this.next();
         }
       }, (this.interval || config.defaultCarouselInterval));

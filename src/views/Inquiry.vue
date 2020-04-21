@@ -68,7 +68,7 @@ export default class Inquiry extends Vue {
 
     record = {};
 
-    formData = {};
+    formData: {[key:string]: any} = {};
 
     steps: Array<FormStep> = [
       {
