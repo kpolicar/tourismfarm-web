@@ -30,7 +30,7 @@ export default class PromoHero extends Vue {
 
 <style lang="scss" scoped>
   .hero {
-    background: center center url('https://scontent-mxp1-1.xx.fbcdn.net/v/t1.0-9/p960x960/67402318_2603172066383001_5349954518236790784_o.jpg?_nc_cat=106&_nc_sid=2d5d41&_nc_ohc=AWTvbbfTfbQAX9RMQe-&_nc_ht=scontent-mxp1-1.xx&_nc_tp=6&oh=070b01e1ebe7edf727ee3d55be033652&oe=5EA2490F');
+    background: center center url('~@/assets/glamping.jpg');
     background-size: cover;
 
     .hero-body, .title {

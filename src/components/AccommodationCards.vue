@@ -3,7 +3,7 @@
     <div class="column"
          v-for="(accommodation, index) in value"
          v-scroll-reveal="{ delay: index*300, duration: 1000, distance: '50%', origin: 'bottom' }">
-      <router-link :to="{name: url}">
+      <router-link :to="{name: accommodation.url}">
         <div class="card is-accommodation is-clipped">
           <div class="card-content">
             <figure class="image is-3by2">
